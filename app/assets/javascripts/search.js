@@ -1,7 +1,6 @@
-var app = angular.module('Myapp', []);
+var app = angular.module("myApp",[]);
 
-app.controller("searchController", function($scope){
+app.controller("searchController",function($scope){
 
-  $scope.test ="hello"; 
-
+$scope.test ="This is test";
 });
