@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root "users#new"
   
   get '/signup' => 'users#new', as: :signup
   post '/users' => 'users#create'
@@ -8,4 +10,5 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy', as: :logout
 
   resources :users 
+  
 end

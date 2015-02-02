@@ -1,0 +1,16 @@
+<div>SIGN UP</div>
+	
+	<%= form_for @user do |f| %>
+
+				First: <%= f.text_field :first_name %>
+				Last: <%= f.text_field :last_name %>
+				Email: <%= f.text_field :email %>
+				Age: <%= f.text_field :age %>
+				Gender: <%= f.text_field :gender %>
+				Password <%= f.password_field :password %> 
+				Confirm <%= f.password_field :password_confirmation %>
+				<%= f.submit "SIGN UP" %>
+
+	<% end %>
+
+</div>
