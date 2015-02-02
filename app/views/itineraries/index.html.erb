@@ -1,0 +1,24 @@
+<h4><%= link_to 'New Itinerary', new_itinerary_path %></h4>
+
+<table>
+
+  <thead>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+  </thead>
+
+  <tbody>
+    <% @itinerary.each do |i| %>
+      <tr>
+        <td><%= i.name.capitalize %></td>
+        <td><%= i.description %></td>
+        <td><%= i.start_date.strftime( "%m/%d/%Y")%></td> 
+        <td> <%= i.end_date.strftime("%m/%d/%Y") %></td>
+        <td><%= link_to 'Edit', edit_itinerary_path(i) %> | <%= link_to 'X', i, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
