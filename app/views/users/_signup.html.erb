@@ -1,11 +1,6 @@
 <!-- SignUp Form -->
 
-<div class="container-fluid sign-up">
-	<div class="row">
-		<div class="col-md-4"></div>
-		<div class="col-md-4">
-		<h1>Sign Up</h1>
-		<div class="form-horizontal">
+		<div class="form">
 				<!-- Start Sign Up form -->
 				<%= form_for @user do |f| %>
 				<div class="form-group">
@@ -35,12 +30,8 @@
 				<div class="form-group">
 					Confirm <%= f.password_field :password_confirmation, class: 'form-control' %>
 				</div>
-				<%= f.submit "SIGN UP", class: 'btn btn-default' %>
+				<%= f.submit "SIGN UP", class: 'btn btn-primary' %>
 				<% end %>
 				<!-- End Sign Up Form -->
 				</div>
-		</div>
-		</div>
-		<div class="col-md-4"></div>
-	</div>
 </div>

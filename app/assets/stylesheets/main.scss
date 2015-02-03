@@ -16,13 +16,26 @@ $grey: #ddddd8;
 }
 
 .logo {
-	width: 55%;
+	width: 75%;
 }
 
+.red {
+	color: #ed1c24;
+}
+
+.mod-head {
+	background-color: #09193e;
+	color: #81dbeb;
+}
+
+.btn-primary {
+	background-color: (#81dbeb) !important;
+	color: #09193e;
+}
 
 //section styles
-.sign-up {
-	margin-top: 50px;
+.sign-upin {
+	margin-top: 150px;
 }
 
 .nav {
