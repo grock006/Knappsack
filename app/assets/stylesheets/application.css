@@ -15,6 +15,9 @@
  *= require_self
  */
 
+body {
+	font-family: 'Roboto', sans-serif;
+}
 
  th {
   width: 200px;
@@ -22,4 +25,22 @@
 
 .form-control {
   width: 500px;
+}
+
+.form-inline {
+	margin-top: 10px;
+}
+
+.navbar-nav>li>.dropdown-menu {
+background-color: #222;
+color: white;
+padding: 10px 10px 10px 40px;
+width: 1100px;
+margin-left: 100px;
+margin-right: 95px;
+border-color: 1px solid white;
+}
+
+.navbar-nav>li>.dropdown-menu .form-group {
+	/*margin-top: 10px;*/
 }
