@@ -1,0 +1,30 @@
+body {
+	background-color: #ddddd8;
+}
+
+// variables
+
+$red: #ed1c24;
+$navy: #09193e;
+$blue: #81dbeb;
+$grey: #ddddd8;
+
+// global styles
+
+* {
+  border-radius:(0) !important;
+}
+
+.logo {
+	width: 55%;
+}
+
+
+//section styles
+.sign-up {
+	margin-top: 50px;
+}
+
+.nav {
+	background-color: #09193e;
+}

@@ -9,11 +9,33 @@
 
 <body>
 
-		<% if current_user %>
-		<%= current_user.first_name.upcase + " " + current_user.last_name.upcase %> | <%= link_to "SIGN OUT", logout_path %>
-		<% else %>
-		<%= link_to "LOGIN", login_path %> | <%= link_to "SIGN UP", signup_path %>
-		<% end %>
+<!-- Navbar Start -->
+
+<nav class="navbar navbar-default navbar-fixed-top nav">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    <div class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+    	<input type="text" class="form-control" placeholder="Search">
+    </div>
+    	<button type="submit" class="btn btn-default red">X</button>
+    </div>
+    <div class="navbar-right">
+    <div class="navbar-text">
+    	<!-- Login / Sign up Links Start-->
+	    <% if current_user %>
+			<%= current_user.first_name.upcase + " " + current_user.last_name.upcase %> | <%= link_to "SIGN OUT", logout_path %>
+			<% else %>
+			<%= link_to "LOGIN", login_path %> | <%= link_to "SIGN UP", signup_path %>
+			<% end %>
+			<!-- Login / Sign Up Links End -->
+    </div>
+    <a class="navbar-brand" href="#"><img alt="Brand" src="assets/logo_comp_1a.svg" class="logo"></a>
+    </div>
+  </div>
+</nav>
+
+<!-- Navbar end -->
 
 <%= yield %>
 
