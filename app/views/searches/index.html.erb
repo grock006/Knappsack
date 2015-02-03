@@ -1,1 +1,33 @@
-Random Result test {{businesses }}
+<button ng-click="test1()">
+  Swithch 1
+</button><br><br>
+<button ng-click="test2()">
+  Swithch 2
+</button><br><br>
+<button ng-click="test3()">
+  Swithch 3
+</button><br><br>
+
+
+
+----------------------------<br>
+<ul>
+  <li ng-repeat="business in businesses">
+    {{business.name}}
+  </li>
+</ul>
+<h3>list 2</h3>
+<ul>
+  <li ng-repeat="business in businesses_2">
+    {{business.name}}
+  </li>
+</ul>
+<h3>list 3</h3>
+<ul>
+  <li ng-repeat="business in businesses_3">
+    {{business.name}}
+  </li>
+</ul>
+
+
+
