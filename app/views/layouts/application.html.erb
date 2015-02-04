@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body>
+<body ng-app>
 
 <!-- Navbar Start -->
 
@@ -48,7 +48,7 @@
         <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
       </div>
       <div class="modal-body">
-       <%= render partial: "signup" %>
+       <%= render partial: "signup" %>{{3*7}}
       </div>
     </div>
   </div>
@@ -68,7 +68,6 @@
     </div>
   </div>
 </div>
-<!--  -->
 
 <%= yield %>
 
