@@ -7,6 +7,7 @@
     <th>Description</th>
     <th>Start Date</th>
     <th>End Date</th>
+    <th>Trip Days</th>
   </thead>
 
   <tbody>
@@ -17,10 +18,13 @@
         <td><%= i.description %></td>
         <td><%= i.start_date %></td> 
         <td> <%= i.end_date %></td>
-        <td><%= link_to 'Edit', edit_itinerary_path(i) %> | <%= link_to 'X', i, method: :delete %></td>
+        <td> <%= i.date_range.count %></td>
+
+        <td><%= link_to 'Edit', edit_itinerary_path(i) %> | <%= link_to 'X', i, method: :delete %> | <%= link_to 'Show', itinerary_path(i) %></td>
       </tr>
       <% end %>
     <% end %>
   </tbody>
 
 </table>
+
