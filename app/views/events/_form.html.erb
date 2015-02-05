@@ -1,0 +1,43 @@
+
+	<div class="form horizontal-form">
+	<%= form_for @event do |e| %>
+		<div class="form-group">
+			<label>Name:</label> <%= e.text_field :name, class: "form-control" %>
+		</div>
+			<div class="row">
+				<div class="col-xs-4">
+					<div class="form-group">
+						Date: <%= e.date_field :date, class: "form-control" %>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="form-group">
+						Starts: <%= e.time_field :start_time, class: "form-control" %>
+					</div>
+				</div>	
+				<div class="col-xs-4">
+					<div class="form-group">
+						Ends: <%= e.time_field :end_time, class: "form-control" %>
+					</div>
+				</div>	
+			</div>
+		</div>	
+			<div class="form-group">
+				Category: <%= e.text_field :category, class: "form-control" %>
+			</div>
+			<div class="form-group">
+				Description: <%= e.text_field :description, class: "form-control" %>
+			</div>
+			<div class="form-group">
+				Rating: <%= e.text_field :rating, class: "form-control" %>
+			</div>
+			<div class="form-group">
+				URL: <%= e.text_field :main_url, class: "form-control" %>
+			</div>
+			<div class="form-group">
+				Location: <%= e.text_field :location, class: "form-control" %>
+			</div>
+				<%= e.submit "Add Event", class: 'btn btn-primary' %>
+	</div>
+
+<% end %>

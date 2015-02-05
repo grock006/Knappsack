@@ -9,6 +9,13 @@ $navy: #09193e;
 $blue: #81dbeb;
 $grey: #ddddd8;
 
+// typography
+
+.l1 {
+	font-weight: 700, bold;
+	color: #ddddd8;
+}
+
 // global styles
 
 * {
@@ -41,3 +48,14 @@ $grey: #ddddd8;
 .nav {
 	background-color: #09193e;
 }
+
+// event sections
+
+.events-box {
+	margin-top: 50px;
+	background-color: #cccccc;
+}
+
+
+
+
