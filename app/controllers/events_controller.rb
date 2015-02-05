@@ -1,9 +1,7 @@
 class EventsController<ApplicationController
 
 	def index
-		if current_user
-			@events = Event.all
-		end
+		@events = Event.all.order(created_at: :desc)
 	end
 
 	def new

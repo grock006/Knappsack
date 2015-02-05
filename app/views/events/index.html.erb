@@ -1,0 +1,17 @@
+<% if !current_user.nil? %>
+
+</br></br></br></br></br>
+
+<% @events.each do |e| %>
+  <%= e.name %></br>
+  <%= e.date %></br>
+  <%= e.start_time %></br>
+  <%= e.location %></br>
+<% end %>
+
+<% else %>
+</br></br></br></br></br>
+<h1>HELLO!</h1>
+
+<% end %>
+
