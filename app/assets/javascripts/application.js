@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require example
+//= require main
 //= require angular
 //= require twitter/bootstrap
 //= require bootstrap-datepicker

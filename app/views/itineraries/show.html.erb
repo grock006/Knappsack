@@ -2,26 +2,113 @@
 
 <div class="row">
 
-<% @itinerary.date_range.each do |i| %>
-<div class="box">
-	<strong><%= i.strftime("%B") %><strong><br>
-			<%= i.strftime("%A") %>
-			<%= i.strftime("%d") %>
-			<h1>
-				<a ng-click="event = !event"><%= @itinerary.events.count %></a>
-			</h1>
-			<h3>EVENTS</h3>
-</div>
-<% end %>
+<div id="owl-example" class="owl-carousel">
+	<% @itinerary.date_range.each do |i|%>
+    <div class="owl-item">
+    <div class="box">
+    	<p><strong><%= i.strftime("%B") %></strong></p> 
+    	<p><em><%= i.strftime("%A") %></em></p>
+    	<h1><%= i.strftime("%d") %></h1>
+    	<a ng-click="event = !event"><%= @itinerary.events.where(date: i).count %> EVENTS</a>
+        <br>
+        <% @itinerary.events.where(date: i).each do |x| %>
+        <%= x.name %><br>
+        <% end %> 
+    
+    </div>
+    </div>
+    <% end %>
+  </div>
+
+  <!-- @itinerary.events.where(date: i) -->
 
 <div ng-show="event" class="event-box">
+	<!-- select events by date that belong to this itinerary and arranges them by datetime in descending chrono order by day -->
+	<!--  create event and it give it a date and time and itinerary id-->
 	<% @itinerary.events.each do |e| %>
-	<%= e.name.upcase %><br>
-	<%= e.category.capitalize %><br>
-	<%= e.date.strftime("%m/%d/%Y") %><br>
-	START: <%= e.start_time.strftime("%I:%M") %><br>
-	END: <%= e.end_time.strftime("%I:%M") %><br>
+    <hr>
+	<h3><%= e.start_time.strftime("%I:%M") %> to <%= e.end_time.strftime("%I:%M") %></h3>	
+	<h2><%= e.name.upcase %></h2>
+	<h3><%= e.category.capitalize %></h3>
+    <h4><%= e.description %></h4>
+	<p><%= e.date.strftime("%m/%d/%Y") %></p>	
+    <hr>
 	<% end %>
-</div>
+
+    <button ng-click="form = !form" class="btn btn-primary">ADD EVENT</button>
+    <br>
+    <br>
+
+    <div ng-show="form">
+
+        <h1>New Event</h1>
+
+        <form class="new_event ng-pristine ng-valid" id="new_event" action="/events" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="3Kw332ZU3eqJPqEZyrpqQLuXRmzLapprgrFxRyBGXhZt8W0DUncXFQhATdlKTOD4pwb+gv7u9qFaJKEU64xE5A==">
+            <div class="form-group">
+              Name
+              <input class="form-control" type="text" name="event[name]" id="event_name">
+            </div>
+
+              <div class="form-group">
+              Date
+              <input class="form-control" type="datetime" name="event[date]" id="event_date">
+            </div>
+            
+            <div class="form-group">
+              Category
+              <input class="form-control" type="text" name="event[category]" id="event_category">
+            </div>
+            
+            <div class="form-group">
+              Description
+              <textarea class="form-control" name="event[description]" id="event_description"></textarea>
+            </div>
+          
+            <div class="form-group">
+              Rating
+              <input class="form-control" type="text" name="event[rating]" id="event_rating">
+            </div>
+            
+            <div class="form-group">
+              URL
+              <input class="form-control" type="text" name="event[main_url]" id="event_main_url">
+            </div>
+          
+            <div class="form-group">
+              Location
+              <input class="form-control" type="text" name="event[location]" id="event_location">
+            </div>
+  
+            <div class="form-group">
+              Start Time
+              <input class="form-control" type="time" name="event[start_time]" id="event_start_time">
+            </div>
+            
+            <div class="form-group">
+              End Time
+              <input class="form-control" type="time" name="event[end_time]" id="event_end_time">
+            </div>
+            
+            <div class="form-group">
+              Integer ID
+              <input class="form-control" type="text" name="event[itinerary_id]" id="event_itinerary_id" value="<%= @itinerary.id %>" placeholder="<%= @itinerary.id %>">
+            </div>
+            
+            <div class="form-group">
+              <input type="submit" name="commit" value="Submit" class="form-control btn btn-primary">
+            </div>
+    </form>
+
+    </div>
 
 </div>
+
+
+
+
+
+
+
+
+</div>
+
