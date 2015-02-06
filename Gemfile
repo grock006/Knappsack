@@ -28,6 +28,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Yelp gem
 gem 'yelp', require: 'yelp'
 
+gem 'responders'
+
+gem 'json'
+
+gem 'json_builder'
+
+gem 'oauth'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

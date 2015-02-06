@@ -1,0 +1,13 @@
+<h3>Business Directory</h3>
+
+<button ng-click="queryBusiness(20)">Limit 20</button><br><br>
+<button ng-click="queryBusiness(2)">Limit 2</button><br><br>
+
+<ul ng-repeat="business in results.businesses">
+  <li>{{ business.name}}</li>
+</ul>
+
+
+
+
+
