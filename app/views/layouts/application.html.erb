@@ -11,24 +11,24 @@
 
 <!-- Navbar Start -->
 
-<nav class="navbar navbar-fixed-top nav">
+<nav class=" navbar navbar-inverse navbar-fixed-top nav">
   <div class="container-fluid">
     <div class="navbar-header">
     <div class="navbar-form">
-    	<!-- Login / Sign up Links Start-->
-	    <% if current_user %>
-			<div class="navbar-text"><%= current_user.first_name.upcase + " " + current_user.last_name.upcase %> | <%= link_to "SIGN OUT", logout_path %></div>
-			<% else %>
-			<!-- Buttons trigger modals -->
-      <div class="navbar-left">
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signupModal">
-		 	 Sign Up
-			</button>
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
-		 	 Login
-			</button>
-      </div>
-			<!-- link_to "LOGIN", login_path | link_to "SIGN UP", signup_path --> 
+      	<!-- Login / Sign up Links Start-->
+  	    <% if current_user %>
+  			<div class="navbar-text"><%= current_user.first_name.upcase + " " + current_user.last_name.upcase %> | <%= link_to "SIGN OUT", logout_path %></div>
+  			<% else %>
+  			<!-- Buttons trigger modals -->
+        <div class="navbar-left">
+  			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signupModal">
+  		 	 Sign Up
+  			</button>
+  			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
+  		 	 Login
+  			</button>
+        </div>
+  			<!-- link_to "LOGIN", login_path | link_to "SIGN UP", signup_path --> 
 			<% end %> 
     </div> <!-- /.navbar-form -->
   </div> <!-- /.navbar-header -->
@@ -46,7 +46,7 @@
         <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
       </div>
       <div class="modal-body">
-       <%= render partial: "users/signup" %>{{3*7}}
+       <%= render partial: "users/signup" %> {{3*7}}
       </div>
     </div>
   </div>
@@ -61,17 +61,17 @@
         <h4 class="modal-title" id="myModalLabel">Login</h4>
       </div>
       <div class="modal-body">
-        <!-- Login Form as partial was problematic -->
-        <%= form_for :user, url: '/login' do |f| %>
-        <div class="form-group">
-          Email: <%= f.text_field :email, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          Password: <%= f.password_field :password, class: 'form-control' %>
-        </div>
-        <%= f.submit "login", class: 'btn btn-primary' %>
-        <% end %>
-        <!-- end of form -->
+            <!-- Login Form as partial was problematic -->
+            <%= form_for :user, url: '/login' do |f| %>
+            <div class="form-group">
+              Email: <%= f.text_field :email, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              Password: <%= f.password_field :password, class: 'form-control' %>
+            </div>
+            <%= f.submit "login", class: 'btn btn-primary' %>
+            <% end %>
+            <!-- end of form -->
       </div>
     </div>
   </div>
