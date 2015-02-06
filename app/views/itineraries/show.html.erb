@@ -9,7 +9,7 @@
     	<p><strong><%= i.strftime("%B") %></strong></p> 
     	<p><em><%= i.strftime("%A") %></em></p>
     	<h1><%= i.strftime("%d") %></h1>
-    	<a ng-click="event = !event"><%= @itinerary.events.where(date: i).count %> EVENTS</a>    
+    	<a ng-click="<%= i.strftime("%A") %> = !<%= i.strftime("%A") %>"><%= @itinerary.events.where(date: i).count %> EVENTS</a>    
     </div>
     </div>
     <% end %>
@@ -17,7 +17,7 @@
 
 
 <% @itinerary.date_range.each do |i|%>
-<div ng-show="event" class="event-box">
+<div ng-show="<%= i.strftime("%A") %>" class="event-box">
   <h1>Itinerary For <%= i.strftime("%A")%> <%= i.strftime("%d") %></h1>
 
         <% @itinerary.events.where(date: i).each do |e| %>
