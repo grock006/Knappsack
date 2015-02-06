@@ -23,9 +23,9 @@ $grey: #ddddd8;
 }
 
 .b2 {
-	font-size: 255px;
+	font-size: 155px;
 	font-weight: 900;
-	letter-spacing: -1px;
+	letter-spacing: -2px;
 	color: #ed1c24;
 }
 
@@ -33,12 +33,6 @@ $grey: #ddddd8;
 
 * {
   border-radius:(2) !important;
-}
-
-.logo {
-	width: 80%;
-	margin-left: 10%;
-	margin-right: 10%;
 }
 
 .red {
@@ -61,7 +55,21 @@ $grey: #ddddd8;
 	margin-bottom: -50px;
 }
 
-//section styles
+//specific styles
+
+.bug {
+	width: 10%;
+}
+
+// .navbar {
+// 	height: 100px;
+// }
+
+.logo {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
 
 .sign-upin {
 	margin-top: 150px;
@@ -69,6 +77,14 @@ $grey: #ddddd8;
 
 .nav {
 	background-color: #09193e;
+}
+
+.landing-btn {
+	background-color: (#ed1c24) !important;
+	margin-left: 0 auto;
+	color: #ddddd8;
+	font-size: 18px;
+	font-weight: 900, bold;
 }
 
 // sections
@@ -86,16 +102,16 @@ $grey: #ddddd8;
 #intro { 
 		background: url() 50% fixed;
     background-color: #f3f3f3; 
-    height: 250px;  
+    height: 25%;  
     margin: 0 auto; 
     width: 100%; 
     position: relative; 
-    padding: 10px 0;
+    padding: 40px 0;
 }
 
 #home { 
     background: url(hero_1a.jpg) 50% fixed; 
-    height: auto;  
+    height: 20%;  
     margin: 0 auto; 
     padding: 20px;
     width: 100%; 
@@ -110,18 +126,18 @@ $grey: #ddddd8;
 
 #about { 
     background: url(map.jpg) 50%;
-    height: 500px;
+    height: 35%;
     margin: 0 auto; 
     width: 100%; 
     position: relative; 
-    padding: 60px 0;
+    padding: 125px 0;
     color: #fff;
 }
 
 #last { 
 		background: url() 50% fixed;
-    background-color: #f3f3f3; 
-    height: 350px;  
+    background-color: #ed1c24; 
+    height: 20%;  
     margin: 0 auto; 
     width: 100%; 
     position: relative; 
