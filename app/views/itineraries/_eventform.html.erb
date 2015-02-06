@@ -1,21 +1,52 @@
-<form class="new_event ng-pristine ng-valid" id="new_event" action="/events" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="wdwLP/5CFk3PW20T1rAP11dwpSA+vyjhoVK0/y8HYfJwgVHjymHcsk4lgdNWRoVvS+Edzgs7RCt5x2Ss5M17AA==">
+        <form class="new_event ng-pristine ng-valid" id="new_event" action="/events" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="3Kw332ZU3eqJPqEZyrpqQLuXRmzLapprgrFxRyBGXhZt8W0DUncXFQhATdlKTOD4pwb+gv7u9qFaJKEU64xE5A==">
             <div class="form-group">
               Name
               <input class="form-control" type="text" name="event[name]" id="event_name">
             </div>
+
+              <div class="form-group">
+              Date
+              <input class="form-control" type="date" name="event[date]" id="event_date">
+            </div>
+            
+            <div class="form-group">
+              Category
+              <input class="form-control" type="text" name="event[category]" id="event_category">
+            </div>
+            
             <div class="form-group">
               Description
               <textarea class="form-control" name="event[description]" id="event_description"></textarea>
             </div>
+          
             <div class="form-group">
-              Start Date
-              <input class="form-control" type="text" name="event[start_time]" id="event_start_time">
+              Rating
+              <input class="form-control" type="text" name="event[rating]" id="event_rating">
             </div>
+            
             <div class="form-group">
-              End Date
-              <input class="form-control" type="text" name="event[end_time]" id="event_end_time">
+              URL
+              <input class="form-control" type="text" name="event[main_url]" id="event_main_url">
             </div>
+          
+            <div class="form-group">
+              Location
+              <input class="form-control" type="text" name="event[location]" id="event_location">
+            </div>
+  
+            <div class="form-group">
+              Start Time
+              <input class="form-control" type="time" name="event[start_time]" id="event_start_time">
+            </div>
+            
+            <div class="form-group">
+              End Time
+              <input class="form-control" type="time" name="event[end_time]" id="event_end_time">
+            </div>
+            
+              <input class="form-control" type="hidden" name="event[itinerary_id]" id="event_itinerary_id" value="<%= @itinerary.id %>">
+            
             <div class="form-group">
               <input type="submit" name="commit" value="Submit" class="form-control btn btn-primary">
             </div>
-</form>
+    </form>

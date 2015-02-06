@@ -33,6 +33,9 @@ gem 'angularjs-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Activerecord form validation gem for datetime
+gem 'validates_timeliness', '~> 3.0'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
