@@ -16,4 +16,6 @@
 //= require angular-animate
 //= require angular-resource
 //= require turbolinks
+//= require underscore
+//= require gmaps/google
 //= require_tree .

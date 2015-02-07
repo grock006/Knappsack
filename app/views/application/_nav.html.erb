@@ -1,0 +1,14 @@
+<nav style="border: 100px">
+<form>
+  <div style="float:left; padding-right:20px; "><input type='text' ng-model="keywords"  placeholder="Keywords"/></div>
+  <div style="float:left; padding-right:20px; "><input type='text' ng-model="location"  placeholder="Location"/></div>
+  <div style="float:left"><input type="submit" ng-click="queryBusiness(20, keywords, location, '')" value="Search" /></div>
+</form>
+  <div style="float:left"><input type="checkbox" ng-click="queryBusiness(5, keywords, location, 'cafes')"> Cafes</div>
+  <div style="float:left"><input type="checkbox" ng-click="queryBusiness(10, keywords, location, 'restaurants')"> Restaurants</div>
+  <div style="float:left"><input type="checkbox" ng-click="queryBusiness(15, keywords, location, 'musicvenues')"> Musics</div>
+  <div style="float:left"><input type="checkbox" ng-click="queryBusiness(20, keywords, location, 'museums')"> Museums</div>
+</nav>
+<br/>
+<br/>
+
