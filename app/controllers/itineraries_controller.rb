@@ -16,7 +16,7 @@ class ItinerariesController < ApplicationController
     	@itinerary = Itinerary.new(itinerary_params)
 
     if @itinerary.save
-      redirect_to itineraries_path
+      redirect_to root_path
     else
       render :new
     end

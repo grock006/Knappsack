@@ -16,7 +16,7 @@ class EventsController < ApplicationController
     	@event = Event.new(event_params)
 
     if @event.save
-      redirect_to itineraries_path
+      redirect_to root_path
     else
       render :new
     end

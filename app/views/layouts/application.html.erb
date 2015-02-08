@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html ng-app="knappApp" ng-controller="itineraryController">
+<html ng-app="knappApp">
 <head>
   <title>Knappsack</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-controller="itineraryController">
 
 	<nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -35,7 +35,8 @@
 
 
       <ul class="nav navbar-nav navbar-right">
-           <li><a href="#" ng-click="itinform = !itinform">NEW ITINERARY</a></li>
+           <li><a href="#" ng-click="selectitin = !selectitin">SELECT ITINERARY</a></li>
+           <li><a href="#" ng-click="itinform = !itinform">CREATE NEW ITINERARY</a></li>
       </ul>
 
     </div><!-- /.navbar-collapse -->
@@ -44,7 +45,7 @@
 
 <div class="container">
   <div ng-show="itinform">
-      <%= render partial: "form" %>
+      <%= render partial: "/itineraries/form" %>
   </div>
 
 <%= yield %>

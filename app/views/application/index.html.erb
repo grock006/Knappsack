@@ -1,0 +1,61 @@
+<div class="row">
+<div class="col-md-12">
+
+<div ng-show="selectitin" ng-hide="showitin">
+<h2><strong>TRAVEL ITINERARIES</strong></h2>
+<div ng-repeat="x in results">
+	<div class="itin-box">
+	<h3><strong>{{x.name}}</strong> <em>{{x.start_date | date:"MM/dd/yyyy" }}</em> to <em>{{x.end_date | date:"MM/dd/yyyy"}}</em></h3>
+	<a href="#" ng-click="showCalendar(x.id)">Show Calendar</a>
+	</div>
+</div>
+</div>
+
+
+
+	
+
+ 	<div ng-repeat="x in calendar.date_range" style="display:inline-block">
+    <div class="box">
+    	<p><strong>{{ x | date:"MMMM"}}</strong></p> 
+    	<p><em>{{ x | date:"EEEE"}}</em></p>
+    	<h1>{{ x | date:"dd"}}</h1>
+    	<a>{{ examples.itinerary.id }}</a> 
+    	   <!-- Needs to display # of events on that itinerary date  -->
+    	   <!-- Events with the same itinerary_id filtered by the same date -->
+    </div>
+    </div> 
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div ng-show="showevent">
+<h1>Events</h1>
+<!-- Needs to display events filtered by itinerary_id and date and start_time -->
+<div ng-repeat="x in events | filter:{'itinerary_id': 17}:true ">
+	Name: {{x.name}}<br>
+	Description: {{x.description}}<br>
+	Date: {{x.date | date:"MM/dd/yyyy" }}<br>
+	Time: {{ x.start_time | date:"h:mma"}} to {{x.end_time | date:"h:mma"}}<br>
+	Category: {{x.category}}<br>
+	<br>
+</div>
+</div>
+
+
+
+
+

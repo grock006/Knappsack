@@ -31,14 +31,15 @@ th {
  }
 
 .box {
-	height: 85%;
-	width: 95%;
+	height: 100%;
+	width: 200px;
 	background-color: white;
 	border: 2px solid black;
 	text-align: center;
 	vertical-align: middle;
-	padding: 10px 0px;
+	padding: 10px;
 	margin-bottom: 30px;
+	display: inline-block;
 }
 
 .box h1 {
@@ -49,6 +50,28 @@ th {
 
 .box a {
 	color: #81dbeb;
+}
+
+.outer-box {
+	display: inline-block;
+}
+
+.itin-box {
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	border: 2px solid black;
+	padding: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px; 
+	display: inline-block;
+}
+
+.itin-box h3 {
+	font-size: 18px;
+	padding: 0px;
+	margin: 0px;
+	color: #09193e;
 }
 
 .item {
