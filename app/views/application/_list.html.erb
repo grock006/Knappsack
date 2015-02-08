@@ -1,5 +1,8 @@
 <list style="float:left; padding: 40px; width: 450px ">
   <ul ng-repeat="business in results.businesses">
-    <li>{{ business.name}}</li>
+    <li>{{ business.location.coordinate.latitude}}</li>
   </ul>
 </list>
+<h3>Longtitude and Latitude</h3>
+<p>Latitude: {{ results.businesses[0].location.coordinate.latitude}}</p>
+<p>Longtitude: {{ results.businesses[0].location.coordinate.longitude}}</p>
