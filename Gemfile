@@ -25,9 +25,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Yelp gem
-gem 'yelp', require: 'yelp'
-
 gem 'responders'
 
 gem 'json'
@@ -35,9 +32,6 @@ gem 'json'
 gem 'json_builder'
 
 gem 'oauth'
-
-# Google Map Gem
-gem 'gmaps4rails'
 
 # Geocoder
 gem "geocoder"
