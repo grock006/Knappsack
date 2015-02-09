@@ -10,7 +10,7 @@ app.factory("SearchResource", function($resource) {
                             url: '/api/searches/:id',
                             params:{limit: limit_value, term: keyword, location: location, category: category},
                             headers : {'Content-Type' : 'application/json'},
-                          }
+                          } 
                     });
 
    return Resource;
