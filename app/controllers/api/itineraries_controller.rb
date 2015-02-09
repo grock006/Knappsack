@@ -8,7 +8,7 @@ module Api
 
     def show
       itinerary = Itinerary.find(params[:id])
-      render json: {itinerary: itinerary, date_range: itinerary.date_range}
+      render json: {itinerary: itinerary, date_range: itinerary.date_range, events: itinerary.events}
     end
 
     def create

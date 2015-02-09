@@ -30,7 +30,7 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.find(params[:id])
 
     if @itinerary.update(itinerary_params)
-      redirect_to itineraries_path
+      redirect_to root_path
     else
       render :edit
     end
@@ -41,7 +41,7 @@ class ItinerariesController < ApplicationController
     
     @itinerary.destroy
     
-    redirect_to itineraries_path
+    redirect_to root_path
   end
 
 private

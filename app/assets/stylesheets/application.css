@@ -30,6 +30,13 @@ th {
   font-weight: bolder;
  }
 
+ hr {
+ 	margin-top: 5px;
+	margin-bottom: 5px;
+	border: 0;
+	border-top: 4px solid #eee;
+ }
+
 .box {
 	height: 100%;
 	width: 200px;

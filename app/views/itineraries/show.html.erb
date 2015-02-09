@@ -17,8 +17,8 @@
 
 
 <% @itinerary.date_range.each do |i|%>
-<div ng-show="<%= i.strftime("%A") %>" class="event-box">
-  <h1>Itinerary For <%= i.strftime("%A")%> <%= i.strftime("%d") %></h1>
+<div class="event-box">
+  <h1><%= i.strftime("%A")%> <%= i.strftime("%d") %></h1>
 
         <% @itinerary.events.where(date: i).each do |e| %>
             <hr>
@@ -30,21 +30,6 @@
             <p><%= e.date.strftime("%m/%d/%Y") %></p> 
             <hr>
         <% end %>
-
-    <br>    
-    <br>   
-    <button ng-click="form = !form" class="btn btn-primary">+ EVENT</button>
-    <br>
-    <br>
-
-    <div ng-show="form">
-
-        <h1>New Event</h1>
-
-          <%= render partial: "eventform" %>
-
-    </div>
-
 </div>
 <% end %>
 
