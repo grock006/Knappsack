@@ -9,22 +9,20 @@ app.controller("searchController",function($scope, SearchResource){
     $scope.results = settings.search(); 
 
    $scope.results.$promise.then(function(data) {
-     $scope.venue = data.businesses[0];    
-      $scope.latitude = $scope.venue.location.coordinate.latitude;
-      $scope.longitude = $scope.venue.location.coordinate.longitude ;
-  
-      $scope.marker = {
-
-      id: 0,
-
-      coords: {
-                latitude:  $scope.latitude 
+    $scope.markers = []
+    for (i = 0 ; i < data.businesses.length; i++){
+      $scope.markers.push({
+          id: i,
+          coords: {
+                latitude:  data.businesses[i].location.coordinate.latitude
                 , 
-                longitude: $scope.longitude
-              }
-      }; 
-
-      $scope.map = { center: { latitude: $scope.latitude , longitude: $scope.longitude }, zoom: 12 };
+                longitude: data.businesses [i].location.coordinate.longitude
+          }
+      });
+    }
+  
+      $scope.marker = { id: 0, coords: {latitude:  34.052234,longitude: -118.243685} }; 
+      $scope.map = { center: { latitude: 34.052234, longitude: -118.243685}, zoom: 8 };
      });
 
 
