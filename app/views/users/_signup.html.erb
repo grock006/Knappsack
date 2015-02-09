@@ -2,6 +2,13 @@
 
 		<div class="form">
 				<!-- Start Sign Up form -->
+				<% flash.each do |key, value| %>
+				  <div class=' alert alert-dismissible alert-<%= key %>' role='danger'>
+				  <%= value %>
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  </div>
+				<% end %>				
+	
 				<%= form_for @user do |f| %>
 				<div class="form-group">
 					First: <%= f.text_field :first_name, class: 'form-control' %>
@@ -30,6 +37,7 @@
 				<div class="form-group">
 					Confirm <%= f.password_field :password_confirmation, class: 'form-control' %>
 				</div>
+
 				<%= f.submit "SIGN UP", class: 'btn btn-primary' %>
 				<% end %>
 				<!-- End Sign Up Form -->

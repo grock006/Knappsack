@@ -4,16 +4,18 @@ body {
 
 // variables
 
-$red: #ed1c24;
+$red:  #ed1c24;
 $navy: #09193e;
 $blue: #81dbeb;
 $grey: #ddddd8;
+
+// fonts
 
 // typography
 
 .l1 {
 	font-weight: 200;
-	color: #ddddd8;
+	color: $grey;
 }
 
 .b1 {
@@ -26,7 +28,7 @@ $grey: #ddddd8;
 	font-size: 155px;
 	font-weight: 900;
 	letter-spacing: -2px;
-	color: #ed1c24;
+	color: $red;
 }
 
 // global styles
@@ -36,17 +38,17 @@ $grey: #ddddd8;
 }
 
 .red {
-	color: #ed1c24;
+	color: $red;
 }
 
 .mod-head {
-	background-color: #09193e;
-	color: #81dbeb;
+	background-color: $navy;
+	color: $blue;
 }
 
 .btn-primary {
-	background-color: (#81dbeb) !important;
-	color: #09193e;
+	background-color: ($blue) !important;
+	color: $navy;
 	border: none;
 }
 
@@ -76,13 +78,13 @@ $grey: #ddddd8;
 }
 
 .nav {
-	background-color: #09193e;
+	background-color: $navy;
 }
 
 .landing-btn {
-	background-color: (#ed1c24) !important;
+	background-color: ($red) !important;
 	margin-left: 0 auto;
-	color: #ddddd8;
+	color: $grey;
 	font-size: 18px;
 	font-weight: 900, bold;
 }
@@ -111,6 +113,7 @@ $grey: #ddddd8;
 
 #home { 
     background: url(hero_1a.jpg) 50% fixed; 
+    background-position: 10% 0px;
     height: 20%;  
     margin: 0 auto; 
     padding: 20px;
@@ -136,7 +139,7 @@ $grey: #ddddd8;
 
 #last { 
 		background: url() 50% fixed;
-    background-color: #ed1c24; 
+    background-color: $red; 
     height: 20%;  
     margin: 0 auto; 
     width: 100%; 
