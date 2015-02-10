@@ -11,34 +11,36 @@
 	
 				<%= form_for @user do |f| %>
 				<div class="form-group">
-					First: <%= f.text_field :first_name, class: 'form-control' %>
+					First: <%= f.text_field :first_name, class: 'form-control' %><span class="help-block"></span>
 				</div>
 				<div class="form-group">
-					Last: <%= f.text_field :last_name, class: 'form-control' %>
+					Last: <%= f.text_field :last_name, class: 'form-control' %><span class="help-block"></span>
 				</div>
 				<div class="form-group">
-					Email: <%= f.text_field :email, class: 'form-control' %>
+					Email: <%= f.text_field :email, class: 'form-control' %><span class="help-block"></span>
 				</div>
 				<div class="row">
 					<div class="col-xs-6">
 					<div class="form-group">
-						Age: <%= f.text_field :age, class: 'form-control' %>
+						Age: <%= f.text_field :age, class: 'form-control' %><span class="help-block"></span>
 					</div>
 					</div>
 					<div class="col-xs-6">
 					<div class="form-group">
-						Gender: <%= f.text_field :gender, class: 'form-control' %>
+						Gender: <%= f.text_field :gender, class: 'form-control' %><span class="help-block"></span>
 					</div>
 					</div>
 				</div>
 				<div class="form-group">
-					Password <%= f.password_field :password, class: 'form-control' %>
+					Password <%= f.password_field :password, class: 'form-control' %><span class="help-block"></span>
 				</div>
 				<div class="form-group">
-					Confirm <%= f.password_field :password_confirmation, class: 'form-control' %>
+					Confirm <%= f.password_field :password_confirmation, class: 'form-control' %><span class="help-block"></span>
 				</div>
 
 				<%= f.submit "SIGN UP", class: 'btn btn-primary' %>
 				<% end %>
 				<!-- End Sign Up Form -->
 	</div>
+
+	<!--  -->
