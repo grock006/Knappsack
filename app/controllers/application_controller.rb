@@ -3,13 +3,12 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-<<<<<<< HEAD
+
 before_action :init_user
 
 def init_user
   @user = User.new
-=======
->>>>>>> greg-dave
+
 end
 
   def current_user

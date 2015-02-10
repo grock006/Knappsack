@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
 		if @user.save
 			session[:user_id] = @user.id.to_s
-			redirect_to intineraries_path
+			redirect_to '/index'
 		else
 			flash.now[:danger] = "Something is wrong"
 			render :index

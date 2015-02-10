@@ -31,6 +31,11 @@ $grey: #ddddd8;
 	color: $red;
 }
 
+.f1 {
+	font-size: 15px;
+	color: $grey;
+}
+
 // global styles
 
 * {
@@ -60,7 +65,12 @@ $grey: #ddddd8;
 //specific styles
 
 .bug {
-	width: 10%;
+	width: 18%;
+	margin-top: -10px;
+}
+
+.signandlog-btn {
+	margin-right: 30px;
 }
 
 // .navbar {
@@ -89,6 +99,23 @@ $grey: #ddddd8;
 	font-weight: 900, bold;
 }
 
+.search-btn {
+	background-color: ($red) !important;
+	color: $grey;
+	font-size: 16px;
+	font-weight: 900, bold;
+	border: none;
+}
+
+.search-form {
+	margin-left: -240px;
+}
+
+.search-filters {
+	margin-left: 18px;
+	margin-top: 6px;
+}
+
 // sections
 
 .events-box {
@@ -101,6 +128,7 @@ $grey: #ddddd8;
 }
 
 // Parallax
+
 #intro { 
 		background: url() 50% fixed;
     background-color: #f3f3f3; 
@@ -146,5 +174,114 @@ $grey: #ddddd8;
     position: relative; 
     padding: 55px 0;
 }
+
+// Greg
+
+// th {
+//   width: 200px;
+//   font-weight: bolder;
+//  }
+
+//  hr {
+//  	margin-top: 5px;
+// 	margin-bottom: 5px;
+// 	border: 0;
+// 	border-top: 4px solid #eee;
+//  }
+
+// .box {
+// 	height: 100%;
+// 	width: 200px;
+// 	background-color: white;
+// 	border: 2px solid black;
+// 	text-align: center;
+// 	vertical-align: middle;
+// 	padding: 10px;
+// 	margin-bottom: 30px;
+// 	display: inline-block;
+// }
+
+// .box h1 {
+// 	font-size: 60px;
+// 	font-weight: 900;
+// 	color: #ed1c24;
+// }
+
+// .box a {
+// 	color: #81dbeb;
+// }
+
+// .outer-box {
+// 	display: inline-block;
+// }
+
+// .itin-box {
+// 	height: 100%;
+// 	width: 100%;
+// 	background-color: white;
+// 	border: 2px solid black;
+// 	padding: 10px;
+// 	margin-bottom: 10px;
+// 	margin-right: 10px; 
+// 	display: inline-block;
+// }
+
+// .itin-box h3 {
+// 	font-size: 18px;
+// 	padding: 0px;
+// 	margin: 0px;
+// 	color: #09193e;
+// }
+
+// .item {
+// 	height: 150px;
+// 	width: 100px;
+// 	background-color: white;
+// 	text-align: center;
+// 	padding: 20px;
+// }
+
+// .event-num {
+// 	color: #ff0004  ;
+// 	font-size: 74px;
+// 	font-weight: 900;
+// }
+
+// .event-box {
+// 	width: 100%;
+// 	height: 100%;
+// 	border: 2px solid black;
+// 	background-color: white;
+// 	padding: 20px;
+// 	margin-right: 30px;
+// 	margin-bottom: 30px;
+// }
+
+// .event-box h1 {
+// 	margin: 0;
+// 	padding: 0;
+// }
+// .event-box h3 {
+// 	margin: 0;
+// 	padding: 0;
+// }
+
+// .form-control {
+//   width: 500px;
+// }
+
+// .form-inline {
+// 	margin-top: 10px;
+// }
+
+// .navbar-nav>li>.dropdown-menu {
+// background-color: #222;
+// color: white;
+// padding: 10px 10px 10px 40px;
+// // width: 1100px;
+// margin-left: 100px;
+// margin-right: 95px;
+// border-color: 1px solid white;
+// }
 
 
