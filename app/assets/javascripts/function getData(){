@@ -1,0 +1,7 @@
+function getData(){
+  
+ $http.get("/mydataset").success(function(data){
+  self.name = data.name;
+ })
+
+}

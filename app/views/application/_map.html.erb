@@ -1,5 +1,10 @@
+<div style="float:right;  width: 950px;">
 <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-  <ui-gmap-marker coords="marker.coords"  idkey="marker.id"></ui-gmap-marker>
+  <ui-gmap-marker ng-repeat="marker in markers" coords="marker.coords"  idkey="marker.id">
+      <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+                <div style="width: 300px; height: 280px; border: 2px solid black;">{{marker.venue_name}}</div>
+      </ui-gmap-window>
+  </ui-gmap-marker>
 </ui-gmap-google-map>
-
+</div>
 
