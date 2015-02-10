@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body ng-app>
+<body ng-controller="itineraryController">
 
 <!-- Sign Up Modal -->
 
@@ -19,7 +19,7 @@
         <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
       </div>
       <div class="modal-body">
-        <%= render partial: "users/signup", modal: true %> {{3*7}}
+        <%= render partial: "users/signup", modal: true %>
       </div>
     </div>
   </div>
@@ -35,7 +35,7 @@
         <h4 class="modal-title" id="myModalLabel">Login</h4>
       </div>
       <div class="modal-body">
-            <!-- Login Form as partial was problematic -->
+            <!-- Login Form as partial still problematic -->
             <%= form_for :user, url: '/login' do |f| %>
             <div class="form-group">
               Email: <%= f.text_field :email, class: 'form-control' %>
@@ -53,74 +53,86 @@
 
 <!-- end of login modal -->
 
-<!-- Itineraries Form -->
-
-<body ng-controller="itineraryController">
-
-<div class="container">
-  <div ng-show="itinform">
-    <%= render partial: "/itineraries/form" %>
-  </div>
-</div>
-
 <!-- Navbar Start -->
 
 <div class="container-fluid">
-<nav class=" navbar navbar-inverse navbar-fixed-top nav">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-        <a class="navbar-brand" href='/users'><img class="bug" alt="Brand" src="<%= asset_path('logo_comp_2a.svg')%>"></a>
-    </div>
-  <div class="navbar-form">
-  <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"></div> -->
-      <div class="input-group navbar-form navbar-left search-form">
-        <span class="input-group-btn">
-          <input type="text" class="form-control" placeholder="Search for...">
-          <input type="text" class="form-control" placeholder="Location...">
-          <button type="submit" class="btn btn-default search-btn">X</button>
-        </span>
-        <div class="search-filters">
-        <label class="checkbox-inline f1">
-          <input type="checkbox" id="inlineCheckbox1" value="option1"> Dining
-        </label>
-        <label class="checkbox-inline f1">
-          <input type="checkbox" id="inlineCheckbox2" value="option2"> Destinations
-        </label>
-        <label class="checkbox-inline f1">
-          <input type="checkbox" id="inlineCheckbox3" value="option3"> Events
-        </label>
+  <nav class="navbar navbar-inverse navbar-fixed-top nav">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <a class="navbar-brand" href='/users'><img class="bug" alt="Brand" src="<%= asset_path('logo_comp_2a.svg')%>"></a>
+      </div>
+    <div class="navbar-form">
+    <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"></div> -->
+        <!-- Search Input -->
+        <div class="input-group navbar-form navbar-left search-form">
+          <span class="input-group-btn">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <input type="text" class="form-control" placeholder="Location...">
+            <button type="submit" class=" search-btn btn">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </button>
+          </span>
+          <!-- Search Filtration buttons -->
+          <div class="search-filters">
+          <label class="checkbox-inline f1">
+            <input type="checkbox" id="inlineCheckbox1" value="option1"> Dining
+          </label>
+          <label class="checkbox-inline f1">
+            <input type="checkbox" id="inlineCheckbox2" value="option2"> Destinations
+          </label>
+          <label class="checkbox-inline f1">
+            <input type="checkbox" id="inlineCheckbox3" value="option3"> Events
+          </label>
+          </div>
         </div>
-      </div>
-  </div>
-  <!-- Login / Sign up Links Start-->
-    <% if current_user %>
-      <ul class="nav navbar-nav navbar-right navbar-text">
-        <li><%= current_user.first_name.upcase + " " + current_user.last_name.upcase %> | <%= link_to "SIGN OUT", logout_path %></li>
-        <li><a href="#" ng-click="selectitin = !selectitin">SELECT ITINERARY</a></li>
-        <li><a href="#" ng-click="itinform = !itinform">CREATE NEW ITINERARY</a></li>
-      </ul>
-    <% else %>
-  <!-- Modal Triggers -->
-      <div class="signandlog-btn">
-      <ul class="navbar-right">
-        <li><button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#signupModal">
-         Sign Up
-        </button>
-        <button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#loginModal">
-          Login
-        </button>
-        </li>
-      </ul>
-      </div>
+    </div>
+    <!-- Login / Sign up Links Start-->
+      <% if current_user %>
+        <!-- Dropdown for selscting itin and sign out -->
+        <div class="signandlog-btn">
+          <div class="dropdown pull-right">
+            <button class="btn btn-primary dropdown-toggle navbar-btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+              <span class="glyphicon glyphicon glyphicon-cog  " aria-hidden="false"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
+             <li role="presentation"><%= link_to "SIGN OUT", logout_path %></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="selectitin = !selectitin">SELECT ITINERARY</a></li>
+            </ul>
+          </div> 
+        </div>        
+        <div class="navbar-nav navbar-right menu-links f1" role="menu" aria-labelledby="dropdownMenu">
+          <button class="btn btn-primary navbar-btn"><ahref="#" ng-click="itinform = !itinform">CREATE NEW ITINERARY</a></button>
+        </div>
+        <% else %>
+        <!-- Login & Sign up Links Start / Modal Triggers -->
+        <div class="input-group signandlog-btn navbar-right">
+          <div class="">
+            <div><button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#signupModal">
+             Sign Up
+            </button>
+            <button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#loginModal">
+              Login
+            </button>
+            </div>
+          </div>
+        </div>
     <% end %> 
-</nav>
+  </nav>
 </div>
 <!-- Navbar end -->
+
+<!-- Itineraries Form / only available to logged in users -->
+<% if current_user %>
+  <div ng-show="itinform">
+    <%= render partial: "/itineraries/form" %>
+  </div>
+<% end %>
+<!-- end -->
 
 <%= yield %>
 

@@ -11,21 +11,21 @@ Rails.application.routes.draw do
 
   resources :users 
   
-	get "/index" => "application#index"
+	get "/index" => "application#index", as: :main
 
 	get "/search" => "searches#index"
 	get "/search/:id" => "searches#show", as: :searches
     
-    resources :itineraries
+  resources :itineraries
 
-    namespace :api do
-    	resources :itineraries
-  	end
+  namespace :api do
+    resources :itineraries
+  end
     
 	resources :events
 
-	 namespace :api do
-    	resources :events
-  	end
+	namespace :api do
+    resources :events
+  end
 
 end

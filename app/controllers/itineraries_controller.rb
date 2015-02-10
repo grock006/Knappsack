@@ -6,17 +6,17 @@ class ItinerariesController < ApplicationController
 
 	def show
     	@itinerary = Itinerary.find(params[:id])
-  	end
+  end
 
-  	def new
+  def new
     	@itinerary = Itinerary.new
-  	end
+  end
 
-  	def create
+  def create
     	@itinerary = Itinerary.new(itinerary_params)
 
     if @itinerary.save
-      redirect_to root_path
+      redirect_to main_path
     else
       render :new
     end
@@ -30,7 +30,7 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.find(params[:id])
 
     if @itinerary.update(itinerary_params)
-      redirect_to root_path
+      redirect_to main_path
     else
       render :edit
     end
@@ -41,7 +41,7 @@ class ItinerariesController < ApplicationController
     
     @itinerary.destroy
     
-    redirect_to root_path
+    redirect_to main_path
   end
 
 private

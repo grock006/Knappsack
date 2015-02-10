@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
 		if @user.save
 			session[:user_id] = @user.id.to_s
-			redirect_to '/index'
+			redirect_to root_path
 		else
 			flash.now[:danger] = "Something is wrong"
 			render :index
@@ -34,6 +34,8 @@ class UsersController < ApplicationController
  #      end
  #    end
  #  end
+
+	private
 
 	def user_params
 		params.require(:user).permit(:first_name, :last_name, :email, :age, :gender, :password, :password_confirmation)

@@ -1,26 +1,27 @@
- <form class="new_itinerary form-inline itin-box" id="new_itinerary_1" action="/itineraries" accept-charset="UTF-8" method="post">
-     <input name="utf8" type="hidden" value="✓">
-    <input type="hidden" name="authenticity_token" value="wkZteV6UnX1il0AGhscaHViEH1U3oBz5kh3acis5hVXHQ9Q3Pi0yeKy0eSbs2lOUqOtyoU1BO+Zua4rQJT7c/Q==">
-           
-            <div class="form-group">
-              <input class="form-control" type="text" name="itinerary[name]" id="itinerary_name" placeholder="Name">
-            </div>
-           
-            <div class="form-group">
-              <input class="form-control" type="text" name="itinerary[description]" id="itinerary_description" placeholder="Description">
-            </div>
-           
-            <div class="form-group">
-              <input class="form-control" type="date" name="itinerary[start_date]" id="itinerary_start_date" placeholder="Start Date">
-            </div>
-           
-            <div class="form-group">
-              <input class="form-control" type="date" name="itinerary[end_date]" id="itinerary_end_date" placeholder="End Date">
-            </div>
+<div class="container-fluid itin-form">
+<div class="col-md-2"></div>
+ <form class="form-group form-inline col-md-8" id="new_itinerary_1" action="/itineraries" accept-charset="UTF-8" method="post">
+    
+  <input name="utf8" type="hidden" value="✓">
+  <input type="hidden" name="authenticity_token" value="wkZteV6UnX1il0AGhscaHViEH1U3oBz5kh3acis5hVXHQ9Q3Pi0yeKy0eSbs2lOUqOtyoU1BO+Zua4rQJT7c/Q==">
+    <div class="form-group">
+     <input class="form-control" type="text" name="itinerary[name]" id="itinerary_name" placeholder="Name">
+    </div>
+             
+    <div class="form-group">
+      <input class="form-control" type="text" name="itinerary[description]" id="itinerary_description" placeholder="Description">
+    </div>
+             
+    <div class="form-group">
+      <input class="form-control" type="date" name="itinerary[start_date]" id="itinerary_start_date" placeholder="Start Date">
+    </div>
                 
-              <input type="submit" name="commit" value="Submit" class="form-control btn btn-default">
- 
-</form>
-
-
-
+    <div class="form-group">
+      <input class="form-control" type="date" name="itinerary[end_date]" id="itinerary_end_date" placeholder="End Date">
+    </div>
+   
+    <input type="submit" name="commit" value="Submit" class="form-control btn btn-default">
+    <div class="col-md-2"></div>
+  </div>
+ </form>
+</div>
