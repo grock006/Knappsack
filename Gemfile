@@ -30,8 +30,12 @@ gem 'bootstrap-datepicker-rails'
 gem 'angularjs-rails'
 
 
+gem 'bootstrap-sass', '~> 3.3.1'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# angular & rails
+gem 'angularjs-rails'
 
 # Activerecord form validation gem for datetime
 gem 'validates_timeliness', '~> 3.0'

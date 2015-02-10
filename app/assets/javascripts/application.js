@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require example
-//= require main
 //= require angular
-//= require twitter/bootstrap
-//= require bootstrap-datepicker
+//= require example
+//= require angular
 //= require turbolinks
+//= require bootstrap-sprockets
+//= require app
 //= require_tree .

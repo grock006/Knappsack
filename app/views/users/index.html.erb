@@ -1,0 +1,54 @@
+<% if !current_user.nil? %>
+
+
+<% else %>
+
+<!-- If logged out user will see the below landing page -->
+
+<!-- Landing Page -->
+
+<!-- Section 1 -->
+<div class="the-bod">
+		<section id="intro" data-speed="4" data-type="background">
+		    <div class="container">
+		        <div class="logo"><img src="<%= asset_path('logo_comp_1a.svg') %>"></div>
+		    </div>
+		</section>
+		<!-- Section 2 -->
+		<section id="home" data-speed="4" data-type="background">
+		    <div class="container-fluid">
+		      	<!-- <h1 class="text-center home-text l1">Create, Read, Update & Destroy</h1> -->
+		      <div class="row">
+		      <h1 class="text-center home-text b1">Travel itineraries like a bawse.</h1>
+		      	<div class="col-md-5"></div>
+		      	<button type="button" class="btn btn-lg landing-btn col-md-2" data-toggle="modal" data-target="#signupModal">
+  		 	 SIGN UP
+  			</button>
+				<div class="col-md-5"></div>
+				</div>
+				</div>
+		</section>
+		<!-- Section 3 -->
+		<section id="about" data-speed="4" data-type="background">
+		    <div class="container">
+		    	<div class="text-center b2"> HAS A MAP! </div>
+		    </div>
+		</section>
+				<!-- Section 4 -->
+		<section id="last" data-speed="0" data-type="background">
+		    <div class="container">
+		    	<div class="text-center b2"></div>
+		    	<ul class="nav nav-tabs">
+					  <li role="presentation" class="active"><a href="#">Home</a></li>
+					  <li role="presentation"><a href="#">Profile</a></li>
+					  <li role="presentation"><a href="#">Messages</a></li>
+					</ul>
+		    </div>
+		</section>
+	</div>
+
+<!-- Landing Page end -->
+
+<% end %>
+
+

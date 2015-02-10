@@ -1,0 +1,150 @@
+body {
+	background-color: #ddddd8;
+}
+
+// variables
+
+$red:  #ed1c24;
+$navy: #09193e;
+$blue: #81dbeb;
+$grey: #ddddd8;
+
+// fonts
+
+// typography
+
+.l1 {
+	font-weight: 200;
+	color: $grey;
+}
+
+.b1 {
+	font-size: 65px;
+	font-weight: 900;
+	letter-spacing: -1px;
+}
+
+.b2 {
+	font-size: 155px;
+	font-weight: 900;
+	letter-spacing: -2px;
+	color: $red;
+}
+
+// global styles
+
+* {
+  border-radius:(2) !important;
+}
+
+.red {
+	color: $red;
+}
+
+.mod-head {
+	background-color: $navy;
+	color: $blue;
+}
+
+.btn-primary {
+	background-color: ($blue) !important;
+	color: $navy;
+	border: none;
+}
+
+.title {
+	margin-top: -50px;
+	margin-bottom: -50px;
+}
+
+//specific styles
+
+.bug {
+	width: 10%;
+}
+
+// .navbar {
+// 	height: 100px;
+// }
+
+.logo {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.sign-upin {
+	margin-top: 150px;
+}
+
+.nav {
+	background-color: $navy;
+}
+
+.landing-btn {
+	background-color: ($red) !important;
+	margin-left: 0 auto;
+	color: $grey;
+	font-size: 18px;
+	font-weight: 900, bold;
+}
+
+// sections
+
+.events-box {
+	margin-top: 50px;
+	background-color: #cccccc;
+}
+
+.the-bod {
+	margin-top: 50px;
+}
+
+// Parallax
+#intro { 
+		background: url() 50% fixed;
+    background-color: #f3f3f3; 
+    height: 25%;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    padding: 40px 0;
+}
+
+#home { 
+    background: url(hero_1a.jpg) 50% fixed; 
+    background-position: 10% 0px;
+    height: 20%;  
+    margin: 0 auto; 
+    padding: 20px;
+    width: 100%; 
+    position: relative; 
+    padding: 100px 0;
+    
+    .home-text {
+    	color: white;
+    }
+
+}
+
+#about { 
+    background: url(map.jpg) 50%;
+    height: 35%;
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    padding: 125px 0;
+    color: #fff;
+}
+
+#last { 
+		background: url() 50% fixed;
+    background-color: $red; 
+    height: 20%;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    padding: 55px 0;
+}
+
+
