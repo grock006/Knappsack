@@ -10,6 +10,22 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy', as: :logout
 
   resources :users 
-  resources :events
   
+	get "/index" => "application#index"
+
+	get "/search" => "searches#index"
+	get "/search/:id" => "searches#show", as: :searches
+    
+    resources :itineraries
+
+    namespace :api do
+    	resources :itineraries
+  	end
+    
+	resources :events
+
+	 namespace :api do
+    	resources :events
+  	end
+
 end
