@@ -36,6 +36,39 @@ $grey2: #f3f3f3;
 	color: $red;
 }
 
+.b3 {
+	font-size: 22px;
+	font-weight: 900;
+	letter-spacing: -1px;
+	color: $navy;
+	border-bottom: 1px $navy solid;
+	text-align: left;
+	line-height: 96px;
+	margin-bottom: 8px;
+	margin-top: -7px;
+}
+
+.b3a {
+	font-size: 25px;
+	font-weight: 900;
+	letter-spacing: -1px;
+	color: $red;
+	border-bottom: 2px $blue solid;
+	text-align: right;
+	margin-left: 150px;
+	line-height: 96px;
+	margin-bottom: 8px;
+	margin-top: -7px;
+}
+
+.b4 {
+	margin-top: 115px;
+	font-size: 55px;
+	font-weight: 900;
+	letter-spacing: -2px;
+	color: $red;
+}
+
 .f1 {
 	font-size: 15px;
 	color: $grey;

@@ -15,9 +15,7 @@ app.controller("itineraryController",function($scope, $http){
     $scope.showEvents = function(i){
     	  $http.get('/api/itineraries/' + i).success(function(data){
     	  $scope.show = data;
-    	});
+        });
     };
-
-
 });
 

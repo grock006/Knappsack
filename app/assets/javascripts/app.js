@@ -19,3 +19,4 @@ $(document).ready(function(){
       }); // end window scroll
    });  // end section function
 }); // close out script
+
