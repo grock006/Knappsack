@@ -8,7 +8,6 @@ app.controller("searchController",function($scope, SearchResource){
     $scope.results = settings.search(); 
 
    $scope.results.$promise.then(function(data) {
-    $scope.test = data;
     $scope.markers = []
     for (i = 0 ; i < data.businesses.length; i++){
       console.log("pushing to array");
@@ -19,7 +18,15 @@ app.controller("searchController",function($scope, SearchResource){
                 , 
                 longitude: data.businesses [i].location.coordinate.longitude
           },
-          venue_name: data.businesses[i].name
+          venue_name: data.businesses[i].name,
+          image_url: data.businesses[i].image_url,
+          category: data.businesses[i].categories[0][0],
+          rating_img_url_large: data.businesses[i].rating_img_url_large,
+          address1: data.businesses[i].location.address[0],
+          address2: data.businesses[i].location.address[1],
+          address3: data.businesses[i].location.address[2],
+          snippet_image_url: data.businesses[i].snippet_image_url,
+          snippet_text: data.businesses[i].snippet_text
       });
     }
       var init_latitude = data.businesses[0].location.coordinate.latitude
