@@ -29,6 +29,9 @@ gem 'bootstrap-datepicker-rails'
 #angularjs-rails
 gem 'angularjs-rails'
 
+gem 'angular-ui-calendar-rails'
+gem 'angular-ui-bootstrap-rails'
+
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
