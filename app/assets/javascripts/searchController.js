@@ -20,11 +20,12 @@ app.controller("searchController",function($scope, SearchResource){
           },
           venue_name: data.businesses[i].name,
           image_url: data.businesses[i].image_url,
-          category: data.businesses[i].categories[0][0],
+          category: data.businesses[i].categories[0][0], 
           rating_img_url_large: data.businesses[i].rating_img_url_large,
           address1: data.businesses[i].location.address[0],
           address2: data.businesses[i].location.address[1],
           address3: data.businesses[i].location.address[2],
+          display_phone: data.businesses[i].display_phone,
           snippet_image_url: data.businesses[i].snippet_image_url,
           snippet_text: data.businesses[i].snippet_text
       });
