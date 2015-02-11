@@ -1,4 +1,20 @@
 app.controller("searchController",function($scope, SearchResource){
+ 
+    $scope.map = { center: { latitude: 0, longitude: 0}, zoom: 12 };
+
+    var onSuccess = function(position){
+      $scope.map.center = {
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude
+      };
+      $scope.$apply();
+    };
+
+      function onError(error) {
+          console.log('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n');
+      }
+
+      navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
  $scope.queryBusiness = function(limit, keyword, location, category){
   var limit_value = parseInt(limit);
@@ -10,7 +26,6 @@ app.controller("searchController",function($scope, SearchResource){
    $scope.results.$promise.then(function(data) {
     $scope.markers = []
     for (i = 0 ; i < data.businesses.length; i++){
-      console.log("pushing to array");
       $scope.markers.push({
           id: i,
           coords: {
