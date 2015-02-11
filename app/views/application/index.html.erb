@@ -1,7 +1,7 @@
-<div class="">
+<div class="container show-itin">
 
 		<div ng-show="selectitin" ng-hide="showitin">
-		<h2><strong>TRAVEL ITINERARIES</strong></h2>
+		<!-- <h2><strong>TRAVEL ITINERARIES</strong></h2> -->
 			<div ng-repeat="x in results">
 				<div class="">
 						<h3><strong>{{x.name}}</strong> <em>{{ x.start_date | date:"MM/dd/yyyy" }}</em> to <em>{{ x.end_date | date:"MM/dd/yyyy" }}</em></h3>

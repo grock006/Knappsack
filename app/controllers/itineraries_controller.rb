@@ -16,7 +16,7 @@ class ItinerariesController < ApplicationController
     	@itinerary = Itinerary.new(itinerary_params)
 
     if @itinerary.save
-      redirect_to main_path
+      redirect_to "/index"
     else
       render :new
     end
@@ -30,7 +30,7 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.find(params[:id])
 
     if @itinerary.update(itinerary_params)
-      redirect_to main_path
+      redirect_to "/index"
     else
       render :edit
     end
@@ -41,7 +41,7 @@ class ItinerariesController < ApplicationController
     
     @itinerary.destroy
     
-    redirect_to main_path
+    redirect_to "/index"
   end
 
 private

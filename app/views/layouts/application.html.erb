@@ -100,13 +100,13 @@
               <span class="glyphicon glyphicon glyphicon-cog  " aria-hidden="false"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
-             <li role="presentation"><%= link_to "SIGN OUT", logout_path %></li>
+             <li role="presentation"><%= link_to "SIGN OUT", logout_path, 'data-no-turbolink' => true %></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="selectitin = !selectitin">SELECT ITINERARY</a></li>
             </ul>
           </div> 
         </div>        
         <div class="navbar-nav navbar-right menu-links f1" role="menu" aria-labelledby="dropdownMenu">
-          <button class="btn btn-primary navbar-btn"><ahref="#" ng-click="itinform = !itinform">CREATE NEW ITINERARY</a></button>
+          <button class="btn btn-primary navbar-btn" ng-click="itinform = !itinform">CREATE NEW ITINERARY</button>
         </div>
         <% else %>
         <!-- Login & Sign up Links Start / Modal Triggers -->
