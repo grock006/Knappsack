@@ -39,7 +39,6 @@ $grey2: #f3f3f3;
 .b3 {
 	font-size: 22px;
 	font-weight: 900;
-	letter-spacing: -1px;
 	color: $navy;
 	border-bottom: 1px $navy solid;
 	text-align: left;
@@ -262,21 +261,26 @@ th {
 	color: #81dbeb;
 }
 
-// .outer-box {
-// 	display: inline-block;
-// }
-
+.form-inline {
+margin-top: 15px;
+}
 .show-itin {
-	margin-top: 80px;
+	margin-top: 575px;
+	margin-bottom: 75px;
 }
 
 .itin-cont {
 	margin-top: 16px;;
 }
 
+.edit-itin-form {
+	margin-top: 66px;
+	background-color: $grey;
+}
+
 .itin-form {
 	margin-top: 66px;
-	background-color: $grey2;
+	background-color: $grey;
 }
 
 .menu-links {
@@ -356,6 +360,19 @@ padding: 10px 10px 10px 40px;
 margin-left: 100px;
 margin-right: 95px;
 border-color: 1px solid white;
+}
+
+// map
+
+.angular-google-map-container { 
+    height: 500px; 
+  }
+
+.google_map {
+   width: 100%;
+   margin-top: 65px;
+   position: absolute;
+   z-index: 1;
 }
 
 

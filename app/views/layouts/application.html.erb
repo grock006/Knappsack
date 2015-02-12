@@ -63,11 +63,7 @@
 </div>
 
 <!-- Itineraries Form / only available to logged in users -->
-<% if current_user %>
-  <div ng-show="itinform">
-    <%= render partial: "/itineraries/form" %>
-  </div>
-<% end %>
+
 <!-- end -->
 
 <%= yield %>

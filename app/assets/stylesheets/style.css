@@ -1,14 +1,5 @@
-.angular-google-map-container { 
-    height: 550px; 
-  }
-
-.google_map {
-   width: 100%;
-/*   float: right;*/
-}
-
-
 /* Result Display List*/
+
 .resultdisplay { 
   float: left;
   overflow-x: scroll;
