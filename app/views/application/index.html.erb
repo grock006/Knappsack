@@ -8,6 +8,7 @@
 	<h3><strong>{{x.name}}</strong> <em>{{x.start_date | date:"MM/dd/yyyy" }}</em> to <em>{{x.end_date | date:"MM/dd/yyyy"}}</em></h3>
 	
 	<a href="#" ng-click="showCalendar(x.id)">Show Calendar</a>
+	<!-- click the event and pass the itinerary id into the calendar and grab events there -->
 
 	<div style="float:right">
 		<a href="/itineraries/{{x.id}}/edit">Edit</a> | <a href="/itineraries/{{x.id}}">Show Full Itinerary</a> | <a rel="nofollow" data-method="delete" href="/itineraries/{{x.id}}">X</a>
@@ -16,10 +17,6 @@
 	</div>
 </div>
 </div>
-
-
-<div ui-calendar="uiConfig.calendar" ng-model="eventSources">
-
 	
 
  	<div ng-repeat="x in calendar.date_range" class="outer-box">
@@ -32,6 +29,10 @@
     	   <!-- Events with the same itinerary_id filtered by the same date -->
     </div>
     </div> 
+
+
+	<div id="calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources" class="span8 calendar" style="background-color:white;padding:20px">
+
 
 
 </div>

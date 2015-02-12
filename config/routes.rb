@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
 
 	# root "application#index"
-  root "application#test"
-
-	get "/search" => "searches#index"
-	get "/search/:id" => "searches#show", as: :searches
+  root "application#index"
     
     resources :itineraries
 

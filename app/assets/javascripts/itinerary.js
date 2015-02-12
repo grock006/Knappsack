@@ -1,25 +1,12 @@
-var app = angular.module("knappApp",["ui.calendar"]);
+angular.module("knappApp",["ui.calendar", "ngResource", "ui.bootstrap"])
+    .config(function($httpProvider) {
+      $httpProvider.defaults.headers.common['X-CSRF-Token'] =
+        $('meta[name=csrf-token]').attr('content');
+    })
+    .controller("itineraryController", itineraryController);
 
-app.controller("itineraryController",function($scope, $http){
-
-    $scope.eventSources = ["Hello World"];
-
-    $scope.uiConfig = {
-      calendar:{
-        height: 450,
-        editable: true,
-        header:{
-          left: 'month basicWeek basicDay agendaWeek agendaDay',
-          center: 'title',
-          right: 'today prev,next'
-        },
-        dayClick: $scope.alertEventOnClick,
-        eventDrop: $scope.alertOnDrop,
-        eventResize: $scope.alertOnResize
-      }
-    };
-
-
+    
+    function itineraryController($scope, $http, $resource){
 
   $http.get('/api/itineraries/').success(function(data){
     $scope.results = data;
@@ -37,6 +24,40 @@ app.controller("itineraryController",function($scope, $http){
     	});
     };
 
+    //Grab the Itinerary id from the view, Itinerary ID is passed into the showCalendar function
+    //showCalendar function(i) passes i where you find :id 
+    //
 
-});
+    var Event = $resource('api/events/:id', {id:'@id'});
+    $scope.events = Event.query(); 
+    $scope.eventSources = [$scope.events];
+    
+
+    $scope.alertEventOnClick = function(data) {
+            $scope.show = data
+            console.log(data);
+            $scope.showevent = true;
+        }
+
+
+    $scope.uiConfig = {
+      calendar:{
+        height: 350,
+        editable: false,
+        timezone: false,
+        header:{
+          left: 'month agendaWeek agendaDay',
+          center: 'title',
+          right: 'today prev,next'
+        },
+        eventClick: $scope.alertEventOnClick,   
+        eventMouseover: $scope.alertEventOnMouseover,     
+        eventDrop: $scope.alertOnDrop,
+        eventResize: $scope.alertOnResize,
+        dayClick: $scope.alertDayOnClick
+      }
+    }
+
+
+};
 

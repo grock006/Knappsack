@@ -24,14 +24,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # For awesome styling with easeeeeee
 gem "twitter-bootstrap-rails"
-# bootstrap-datepicker-rails
-gem 'bootstrap-datepicker-rails'
-#angularjs-rails
+
 gem 'angularjs-rails'
-
 gem 'angular-ui-calendar-rails'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 gem 'angular-ui-bootstrap-rails'
-
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
