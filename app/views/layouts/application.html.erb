@@ -73,24 +73,26 @@
     <div class="navbar-form">
     <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"></div> -->
         <!-- Search Input -->
+      <form>
         <div class="input-group navbar-form navbar-left search-form">
           <span class="input-group-btn">
-            <input type="text" class="form-control" placeholder="Search for...">
-            <input type="text" class="form-control" placeholder="Location...">
+            <input type="text" class="form-control" ng-model="keywords" placeholder="Search for...">
+            <input type="text" class="form-control" ng-model="location" placeholder="Location...">
             <button type="submit" class=" search-btn btn">
-              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-search" aria-hidden="true"  ng-click="queryBusiness(20, keywords, location, '')" value="Search" ></span>
             </button>
           </span>
+      </form>
           <!-- Search Filtration buttons -->
           <div class="search-filters">
           <label class="checkbox-inline f1">
-            <input type="checkbox" id="inlineCheckbox1" value="option1"> Dining
+            <input type="checkbox" id="inlineCheckbox1"  ng-click="queryBusiness(5, keywords, location, 'cafes')"> Cafes
           </label>
           <label class="checkbox-inline f1">
-            <input type="checkbox" id="inlineCheckbox2" value="option2"> Destinations
+            <input type="checkbox" id="inlineCheckbox2" ng-click="queryBusiness(10, keywords, location, 'restaurants')"> Restaurants
           </label>
           <label class="checkbox-inline f1">
-            <input type="checkbox" id="inlineCheckbox3" value="option3"> Events
+            <input type="checkbox" id="inlineCheckbox3" ng-click="queryBusiness(15, keywords, location, 'musicvenues')"> Music
           </label>
           </div>
         </div>
