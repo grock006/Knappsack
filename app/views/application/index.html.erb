@@ -6,7 +6,7 @@
 	<div class="itin-box">
 			<h3><strong>{{x.name}}</strong> <em>{{x.start_date | date:"MM/dd/yyyy" }}</em> to <em>{{x.end_date | date:"MM/dd/yyyy"}}</em></h3>
 			
-			<a href="#" ng-click="showCalendar(x.id);">Show Calendar</a>
+			<button ng-click="showCalendar(x.id);" class="btn btn-primary">Show Calendar</button>
 
 			<div style="float:right">
 				<a href="/itineraries/{{x.id}}/edit">Edit</a> | <a href="/itineraries/{{x.id}}">Show Full Itinerary</a> | <a rel="nofollow" data-method="delete" href="/itineraries/{{x.id}}">X</a>

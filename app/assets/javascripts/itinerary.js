@@ -8,45 +8,28 @@ angular.module("knappApp",["ui.calendar", "ngResource", "ui.bootstrap"])
     
     function itineraryController($scope, $http, $resource){
 
-  $http.get('/api/itineraries/').success(function(data){
-    $scope.results = data;
-  });
+      $http.get('/api/itineraries/').success(function(data){
+        $scope.results = data;
+      });
+
+        $scope.showEvents = function(i){
+          $http.get('/api/itineraries/' + i).success(function(data){
+          $scope.show = data;
+        });
+    };
 
      $scope.showCalendar = function(i){
      	  $http.get('/api/itineraries/' + i).success(function(data){
-    	  $scope.calendar = data;
+    	  $scope.eventSources = [data];
+          console.log(i);
     	});
      };
-
-    $scope.showEvents = function(i){
-    	  $http.get('/api/itineraries/' + i).success(function(data){
-    	  $scope.show = data;
-    	});
-    };
-
-    //Grab the Itinerary id from the view, Itinerary ID is passed into the showCalendar function
-    //showCalendar function(i) passes i where you find :id 
-    //
-
-    // var Event = $resource('api/events/:id', {id:'@id'});
-    // $scope.events = Event.query(); 
-    // $scope.eventSources = [$scope.events];
 
     $scope.alertEventOnClick = function(data) {
             $scope.show = data
             console.log(data);
             $scope.showevent = true;
         }
-
-
-  //    $scope.eventSources = [];
-  //    $scope.showCalendar = function(i){
-  //   console.log(i);
-  //   var Test = $resource('api/itineraries/:id', {id:'@id'});  
-  //   $scope.test = Test.get({id: i}); 
-  //   $scope.eventSources = [$scope.test];
-  // }
-
  
     var Test = $resource('api/itineraries/:id', {id:'@id'});  
     $scope.test = Test.get({id: 20}); 
@@ -74,3 +57,23 @@ angular.module("knappApp",["ui.calendar", "ngResource", "ui.bootstrap"])
 
 };
 
+
+
+
+
+
+
+
+
+
+    // var Event = $resource('api/events/:id', {id:'@id'});
+    // $scope.events = Event.query(); 
+    // $scope.eventSources = [$scope.events];
+
+  //    $scope.eventSources = [];
+  //    $scope.showCalendar = function(i){
+  //   console.log(i);
+  //   var Test = $resource('api/itineraries/:id', {id:'@id'});  
+  //   $scope.test = Test.get({id: i}); 
+  //   $scope.eventSources = [$scope.test];
+  // }
