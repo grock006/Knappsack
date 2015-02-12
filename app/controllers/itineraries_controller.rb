@@ -29,7 +29,7 @@ class ItinerariesController < ApplicationController
   end
 
   def update
-    @itinerary = current_user.itinerary.find(params[:id])
+    @itinerary = current_user.itineraries.find(params[:id])
 
     if @itinerary.update(itinerary_params)
       redirect_to "/index"

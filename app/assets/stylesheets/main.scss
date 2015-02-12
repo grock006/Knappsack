@@ -12,7 +12,7 @@ $red:  #ed1c24;
 $navy: #09193e;
 $blue: #81dbeb;
 $grey: #ddddd8;
-$grey2: #f3f3f3;
+$grey2: #e6e6e6;
 
 // fonts
 
@@ -36,6 +36,14 @@ $grey2: #f3f3f3;
 	color: $red;
 }
 
+.b3b {
+	font-size: 22px;
+	font-weight: 900;
+	color: $navy;
+	border-bottom: 1px $navy solid;
+	text-align: left;
+	line-height: 75px;
+}
 .b3 {
 	font-size: 22px;
 	font-weight: 900;
@@ -265,7 +273,8 @@ th {
 margin-top: 15px;
 }
 .show-itin {
-	margin-top: 575px;
+	width: 100%;
+	margin-top: 580px;
 	margin-bottom: 75px;
 }
 
@@ -276,6 +285,12 @@ margin-top: 15px;
 .edit-itin-form {
 	margin-top: 66px;
 	background-color: $grey;
+}
+
+.itin {
+	background-color: $grey2;
+	border: solid 1px $grey;
+	padding: 10px;
 }
 
 .itin-form {

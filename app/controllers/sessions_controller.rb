@@ -8,9 +8,9 @@ class SessionsController < ApplicationController
 
 		if user && user.authenticate(params[:user][:password])
 			session[:user_id] = user.id 
-			redirect_to '/index'
+			redirect_to root_path
 		else
-			render :new
+			redirect_to users_path
 		end
 	end
 

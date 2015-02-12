@@ -7,11 +7,10 @@
 
 
 <div class="container show-itin">
-
 		<div ng-show="selectitin" ng-hide="showitin">
 			<div ng-repeat="x in results">
-				<div class="col-md-4">
-						<div class="b3">{{x.name}} <em>{{ x.start_date | date:"MM/dd/yyyy" }}</em> to <em>{{ x.end_date | date:"MM/dd/yyyy" }}</em></div>
+				<div class="col-md-4 itin">
+						<div class="b3b">{{x.name}} <em>{{ x.start_date | date:"MM/dd/yyyy" }}</em> to <em>{{ x.end_date | date:"MM/dd/yyyy" }}</em></div>
 						<a href="#" ng-click="showCalendar(x.id)">Show Calendar</a>
 						<div class="f2">
 						<a href="/itineraries/{{x.id}}/edit">Edit</a> | <a href="/itineraries/{{x.id}}">Show Full Itinerary</a> | <a class="text-right" rel="nofollow" data-method="delete" href="/itineraries/{{x.id}}">X</a>
@@ -27,9 +26,12 @@
 		    	<a href="#" ng-click="showEvents(calendar.itinerary.id)">{{calendar.events.length }}</a> 
 		    	  <!-- Needs to display # of events on that itinerary date  -->
 		    	  <!-- Events with the same itinerary_id filtered by the same date -->
-		    </div>
-
+	    </div>
 	</div>
+</div>
+
+
+<!-- Individual Events Start -->
 
 <!-- Needs to display events filtered by itinerary_id and date and start_time -->
 <div ng-repeat="x in show.events ">
@@ -42,24 +44,17 @@
 	<a href="{{x.main_url}}">Website</a><br>
 	<hr>
 	<div>
-	<br>
-	<button class="btn btn-primary" ng-click="showevent =!showevent"> + EVENT </button>
-	<br>
-	<br>
-<div ng-show="showevent">
-	<%= render partial: "events/eventform" %>
-</div>
-</div>
-
-</div>
-
-<!-- Google Map -->
-<div style="border: 2px solid black;">
-	<div class="google_map">
-	<ui-gmap-google-map center='map.center' zoom='map.zoom'>
-	</ui-gmap-google-map>
+		<br>
+		<button class="btn btn-primary" ng-click="showevent =!showevent"> + EVENT </button>
+		<br>
+		<br>
+			<div ng-show="showevent">
+				<%= render partial: "events/eventform" %>
+		</div>
 	</div>
 </div>
+</div>
 
+<!-- Individual Events End -->
 
 
