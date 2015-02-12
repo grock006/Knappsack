@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     @user = User.new
   end
 
+  def index
+
+  end
+
   def authorize
     redirect_to root_path unless current_user
   end
@@ -27,3 +31,4 @@ class ApplicationController < ActionController::Base
   end
 
 end
+

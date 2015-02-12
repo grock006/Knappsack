@@ -3,6 +3,7 @@
 <html ng-app="myApp"  ng-controller="searchController">
 <head>
   <title>Knappsack</title>
+  <%= javascript_include_tag '//maps.googleapis.com/maps/api/js?sensor=false' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>

@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  # get 'searches#index'
+
+   scope 'api' do
+    get "/searches" => "searches#index"
+    # resources :searches 
+  end
+
+# get  'api/query' => 'searches#index'
+
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
+
 
   root "users#index"
   
