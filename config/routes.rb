@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  scope 'api' do
-    get "/searches" => "searches#index"
-  end
-
   root "users#index"
   
   get '/signup' => 'users#new', as: :signup
@@ -21,15 +17,11 @@ Rails.application.routes.draw do
 	get "/search/:id" => "searches#show"
     
   resources :itineraries
+  resources :events
 
   namespace :api do
     resources :itineraries
-  end
-    
-	resources :events
-
-	namespace :api do
     resources :events
+    get "/searches" => "searches#index"
   end
-
 end
