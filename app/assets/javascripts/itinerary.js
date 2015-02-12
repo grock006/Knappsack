@@ -28,10 +28,9 @@ angular.module("knappApp",["ui.calendar", "ngResource", "ui.bootstrap"])
     //showCalendar function(i) passes i where you find :id 
     //
 
-    var Event = $resource('api/events/:id', {id:'@id'});
-    $scope.events = Event.query(); 
-    $scope.eventSources = [$scope.events];
-    
+    // var Event = $resource('api/events/:id', {id:'@id'});
+    // $scope.events = Event.query(); 
+    // $scope.eventSources = [$scope.events];
 
     $scope.alertEventOnClick = function(data) {
             $scope.show = data
@@ -39,6 +38,20 @@ angular.module("knappApp",["ui.calendar", "ngResource", "ui.bootstrap"])
             $scope.showevent = true;
         }
 
+
+  //    $scope.eventSources = [];
+  //    $scope.showCalendar = function(i){
+  //   console.log(i);
+  //   var Test = $resource('api/itineraries/:id', {id:'@id'});  
+  //   $scope.test = Test.get({id: i}); 
+  //   $scope.eventSources = [$scope.test];
+  // }
+
+ 
+    var Test = $resource('api/itineraries/:id', {id:'@id'});  
+    $scope.test = Test.get({id: 20}); 
+    $scope.eventSources = [$scope.test];
+    
 
     $scope.uiConfig = {
       calendar:{

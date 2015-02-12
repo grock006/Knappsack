@@ -25,10 +25,10 @@ navy: #09193e; 
 blue: #81dbeb ; 		
 grey: #ddddd8 ;*/
 
-th {
+/*th {
   width: 200px;
   font-weight: bolder;
- }
+ }*/
 
  hr {
  	margin-top: 5px;
@@ -133,5 +133,5 @@ border-color: 1px solid white;
 }
 
 .navbar-nav>li>.dropdown-menu .form-group {
-	/*margin-top: 10px;*/
-}
+	/*margin-top: 10px;
+}*/
