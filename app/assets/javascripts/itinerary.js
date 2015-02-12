@@ -1,5 +1,3 @@
-var app = angular.module("knappApp",[]);
-
 app.controller("itineraryController",function($scope, $http){
 
   $http.get('/api/itineraries/').success(function(data){
