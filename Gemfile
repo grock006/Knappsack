@@ -25,7 +25,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 #angularjs-rails
-gem 'angularjs-rails'
 
 gem 'bootstrap-sass', '~> 3.3.1'
 
@@ -39,6 +38,8 @@ gem 'oauth'
 
 # Geocoder
 gem "geocoder"
+
+gem 'rails_12factor'
 
 
 # Use ActiveModel has_secure_password
