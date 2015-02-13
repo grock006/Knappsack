@@ -46,12 +46,9 @@ GEM
     bcrypt (3.1.9)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-<<<<<<< HEAD
     bootstrap-sass (3.3.3)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
-=======
->>>>>>> greg
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -69,13 +66,10 @@ GEM
     debugger-linecache (1.2.0)
     erubis (2.7.0)
     execjs (2.2.2)
-<<<<<<< HEAD
-    geocoder (1.2.6)
-=======
     fullcalendar-rails (2.2.5.1)
       jquery-rails (>= 3.1.1, < 5.0.0)
       momentjs-rails (~> 2.8, >= 2.8.4)
->>>>>>> greg
+    geocoder (1.2.6)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -187,14 +181,14 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.1)
   byebug
   coffee-rails (~> 4.1.0)
+  fullcalendar-rails
   geocoder
   jbuilder (~> 2.0)
   jquery-rails
   json
   json_builder
-  oauth
-  fullcalendar-rails
   momentjs-rails
+  oauth
   pg
   rails (= 4.2.0)
   responders
