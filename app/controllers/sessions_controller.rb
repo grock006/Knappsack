@@ -10,13 +10,13 @@ class SessionsController < ApplicationController
 			session[:user_id] = user.id 
 			redirect_to '/index'
 		else
-			render :new
+			redirect_to root_path
 		end
 	end
 
 	def destroy
 		session[:user_id] = nil
-		redirect_to users_path
+		redirect_to root_path
 	end
 
 end

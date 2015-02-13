@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+	def index		
+	end
+
+
 	def new
 		redirect_to events_path if current_user
 		@user = User.new
@@ -13,7 +17,7 @@ class UsersController < ApplicationController
 			redirect_to root_path
 		else
 			flash.now[:danger] = "Something is wrong"
-			render :index
+			redirect_to root_path
 		end
 	end
 

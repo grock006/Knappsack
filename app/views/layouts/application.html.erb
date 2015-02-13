@@ -18,7 +18,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header mod-head">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="red" aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span style="color: white;" aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
       </div>
       <div class="modal-body">
@@ -34,7 +34,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header mod-head">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="red" aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span style="color: white;" aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Login</h4>
       </div>
       <div class="modal-body">
@@ -56,88 +56,14 @@
 
 <!-- end of login modal -->
 
-<!-- Navbar Start -->
+<!-- Navbar partial -->
 
 <div class="container-fluid">
-  <nav class="navbar navbar-inverse navbar-fixed-top nav">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-          <!-- Logo bug -->
-          <a class="navbar-brand" href='/users' data-no-turbolink='false' ><img class="bug" alt="Brand" src="<%= asset_path('logo_comp_2a.svg')%>"></a>
-      </div>
-    <div class="navbar-form">
-    <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"></div> -->
-        <!-- Search Input -->
-      <form>
-        <div class="input-group navbar-form navbar-left search-form">
-          <span class="input-group-btn">
-            <input type="text" class="form-control" ng-model="keywords" placeholder="Search for...">
-            <input type="text" class="form-control" ng-model="location" placeholder="Location...">
-            <button type="submit" class=" search-btn btn">
-              <span class="glyphicon glyphicon-search" aria-hidden="true"  ng-click="queryBusiness(20, keywords, location, '')" value="Search" ></span>
-            </button>
-          </span>
-      </form>
-          <!-- Search Filtration buttons -->
-          <div class="search-filters">
-          <label class="checkbox-inline f1">
-            <input type="checkbox" id="inlineCheckbox1"  ng-click="queryBusiness(5, keywords, location, 'cafes')"> Cafes
-          </label>
-          <label class="checkbox-inline f1">
-            <input type="checkbox" id="inlineCheckbox2" ng-click="queryBusiness(10, keywords, location, 'restaurants')"> Restaurants
-          </label>
-          <label class="checkbox-inline f1">
-            <input type="checkbox" id="inlineCheckbox3" ng-click="queryBusiness(15, keywords, location, 'musicvenues')"> Music
-          </label>
-          </div>
-        </div>
-    </div>
-    <!-- Login / Sign up Links Start-->
-      <% if current_user %>
-        <!-- Dropdown for selscting itin and sign out -->
-        <div class="signandlog-btn">
-          <div class="dropdown pull-right">
-            <button class="btn btn-primary dropdown-toggle navbar-btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-              <span class="glyphicon glyphicon glyphicon-cog  " aria-hidden="false"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
-             <li role="presentation"><%= link_to "SIGN OUT", logout_path, 'data-no-turbolink' => true %></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="selectitin = !selectitin">SELECT ITINERARY</a></li>
-            </ul>
-          </div> 
-        </div>        
-        <div class="navbar-nav navbar-right menu-links f1" role="menu" aria-labelledby="dropdownMenu">
-          <button class="btn btn-primary navbar-btn" ng-click="itinform = !itinform">CREATE NEW ITINERARY</button>
-        </div>
-        <% else %>
-        <!-- Login & Sign up Links Start / Modal Triggers -->
-        <div class="input-group signandlog-btn navbar-right">
-          <div class="">
-            <div><button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#signupModal">
-             Sign Up
-            </button>
-            <button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#loginModal">
-              Login
-            </button>
-            </div>
-          </div>
-        </div>
-    <% end %> 
-  </nav>
+  <%= render partial: 'layouts/nav' %>
 </div>
-<!-- Navbar end -->
 
 <!-- Itineraries Form / only available to logged in users -->
-<% if current_user %>
-  <div ng-show="itinform">
-    <%= render partial: "/itineraries/form" %>
-  </div>
-<% end %>
+
 <!-- end -->
 
 <%= yield %>
