@@ -1,4 +1,6 @@
 app.controller("searchController",function($scope, SearchResource){
+
+    // $scope.test ="Hello Hello"
  
     $scope.map = { center: { latitude: 0, longitude: 0}, zoom: 12 };
 
@@ -20,10 +22,10 @@ app.controller("searchController",function($scope, SearchResource){
   var limit_value = parseInt(limit);
 
     var settings = SearchResource( limit_value , keyword, location, category);
-    var coord = $scope.results;
-    $scope.results = settings.search(); 
 
-   $scope.results.$promise.then(function(data) {
+    $scope.results = settings.search(); 
+    $scope.results.$promise.then(function(data) {
+    $scope.businesses = data.businesses;
     $scope.markers = []
     for (i = 0 ; i < data.businesses.length; i++){
       $scope.markers.push({
