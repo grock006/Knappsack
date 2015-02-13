@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   root "users#index"
   
   get '/signup' => 'users#new', as: :signup
@@ -8,6 +9,12 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new', as: :login
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy', as: :logout
+=======
+	# root "application#index"
+  root "application#index"
+    
+    resources :itineraries
+>>>>>>> greg
 
   resources :users 
   

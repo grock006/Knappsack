@@ -11,24 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206001606) do
+ActiveRecord::Schema.define(version: 20150212020051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
-    t.string   "name"
-    t.date     "date"
-    t.time     "start_time"
-    t.time     "end_time"
+    t.string   "title"
+    t.datetime "start"
     t.string   "category"
     t.string   "description"
     t.string   "rating"
     t.string   "main_url"
     t.string   "location"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.integer  "itinerary_id"
+    t.boolean  "allDay",       default: false
+    t.datetime "end"
   end
 
   add_index "events", ["itinerary_id"], name: "index_events_on_itinerary_id", using: :btree

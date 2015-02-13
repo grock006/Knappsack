@@ -12,12 +12,21 @@
 //
 //= require jquery
 //= require jquery_ujs
+
 //= require angular
+//= require moment
 //= require example
 //= require angular-animate
 //= require angular-resource
-//= require turbolinks
+//= require angular-ui-calendar
+//= require angular-ui-bootstrap-tpls
+//= require twitter/bootstrap
+//= require angular-ui-bootstrap
+//= require fullcalendar
+//= require fullcalendar/gcal
 //= require bootstrap-sprockets
 //= require app
 //= require underscore
+
 //= require_tree .
+

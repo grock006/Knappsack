@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>HAHAHAHAHAHAH</h1>
 <div style="border: 2px solid black; width: 100%; height: 600px;">
 	<div class="google_map">
@@ -32,25 +33,59 @@
 		    </div>
 
 	</div>
+=======
+<div ng-controller="itineraryController">
 
-<!-- Needs to display events filtered by itinerary_id and date and start_time -->
-<div ng-repeat="x in show.events ">
-	<div class="event-box">
-	<strong>{{x.date | date:"MM/dd/yyyy" }} @ <em>{{ x.start_time | date:"h:mma"}} TO {{x.end_time | date:"h:mma"}}</em></strong><br>	
-	<hr>
-	<h3>{{x.name}} @ <em>{{x.location}}</em></h3>
-	<em>{{x.category}}</em><br>
-	{{x.description}}<br>
-	<a href="{{x.main_url}}">Website</a><br>
-	<hr>
-	<div>
-	<br>
-	<button class="btn btn-primary" ng-click="showevent =!showevent"> + EVENT </button>
-	<br>
-	<br>
-<div ng-show="showevent">
-	<%= render partial: "events/eventform" %>
+	<form ng-submit="showCalendar(17);">
+		<button>Change to 17</button>
+	</form>
+
+<h2><strong>TRAVEL ITINERARIES</strong></h2>
+<div ng-repeat="x in results">
+	
+	<div class="itin-box">
+			<h3><strong>{{x.name}}</strong> <em>{{x.start_date | date:"MM/dd/yyyy" }}</em> to <em>{{x.end_date | date:"MM/dd/yyyy"}}</em></h3>
+			
+			<button ng-click="showCalendar(x.id);" class="btn btn-primary">Show Calendar</button>
+
+			<div style="float:right">
+				<a href="/itineraries/{{x.id}}/edit">Edit</a> | <a href="/itineraries/{{x.id}}">Show Full Itinerary</a> | <a rel="nofollow" data-method="delete" href="/itineraries/{{x.id}}">X</a>
+			</div>
+
+	</div>
 </div>
+
+	
+
+
+<!-- <div id="calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources" style="background-color:white;padding:20px;border:2px solid black;"></div> -->
+
+<div class="calendar" ng-model="eventSources" calendar="myCalendar" config="uiConfig.calendar" ui-calendar="uiConfig.calendar" style="background-color:white;padding:20px;border:2px solid black;">
+</div>
+
+<br>
+<hr>
+
+			<div class="event-box" ng-show="showevent">
+				<strong>{{show.start._f | date: "MM/dd/yyyy" }}</strong>
+				<br>	
+				<hr>
+				<h3>{{show.title}} @ <em>{{show.location}}</em></h3>
+				<em>{{show.category}}</em><br>
+				{{show.description}}<br>
+				<a href="{{show.main_url}}">Website</a><br>
+				<button class="btn btn-primary" ng-click="showeventform =!showeventform"> + EVENT </button>
+					<br>
+					<div ng-show="showeventform">
+						<br>
+						<%= render partial: "events/eventform" %>
+						<hr>
+					</div>
+			<div>
+			
+>>>>>>> greg
+
+	
 </div>
 
 </div>
@@ -62,6 +97,9 @@
 	</ui-gmap-google-map>
 	</div>
 </div>
+
+
+
 
 
 
