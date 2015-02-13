@@ -118,10 +118,6 @@ h2 {
 	border-color: $blue;
 }
 
-.input:autofill {
-	color: $grey2;
-}
-
 .red {
 	color: $red;
 }
@@ -597,6 +593,10 @@ div.resultdisplay::-moz-scrollbars-vertical {
 
 .resultdisplay ul li .list_outerbox .list_content .business_photo img:hover {
   cursor:pointer;
+}
+
+.autofill {
+	color: $grey2;
 }
 
 

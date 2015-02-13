@@ -8,7 +8,7 @@
         </button>
           <!-- Logo bug / Links back to index if logged in-->
           <% if current_user %>
-          <a class="navbar-brand" href='/index' data-no-turbolink='false' ><img class="bug" alt="Brand" src="<%= asset_path('logo_comp_2a.svg')%>"></a>
+          <a class="navbar-brand" href='/users' data-no-turbolink='false' ><img class="bug" alt="Brand" src="<%= asset_path('logo_comp_2a.svg')%>"></a>
           <% else %>
           <a class="navbar-brand" href='/users' data-no-turbolink='false' ><img class="bug" alt="Brand" src="<%= asset_path('logo_comp_2a.svg')%>"></a>
           <% end %>

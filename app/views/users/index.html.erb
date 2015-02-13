@@ -1,5 +1,24 @@
 <% if !current_user.nil? %>
 
+<section>
+	<!-- Search Results -->
+	<display class="srch-results">
+		<div>
+			<%= render partial: "list" %>
+		</div>
+	</display>
+	<!-- Map -->
+			<%= render partial: "map" %>
+</section>
+
+<!-- Itineraries -->
+
+<section>
+</section> -->
+
+<!-- Calendar -->
+
+<%= render partial: "calendar"%>
 
 <% else %>
 
