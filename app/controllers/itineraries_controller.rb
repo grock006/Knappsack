@@ -1,4 +1,6 @@
 class ItinerariesController < ApplicationController
+
+  before_action :authorize
   
   def index
     if current_user
