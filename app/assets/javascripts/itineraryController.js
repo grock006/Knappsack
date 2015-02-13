@@ -4,75 +4,27 @@ angular.module("knappApp",["ui.calendar", "ngResource", "ui.bootstrap"])
         $('meta[name=csrf-token]').attr('content');
     })
     .controller("itineraryController", itineraryController);
-
     
     function itineraryController($scope, $http, $resource){
 
+      //Show all the User's Itineraries 
       $http.get('/api/itineraries/').success(function(data){
         $scope.results = data;
         console.log(data)
       });
 
-        $scope.showEvents = function(i){
-          $http.get('/api/itineraries/' + i).success(function(data){
-          $scope.show = data;
-        });
-    };
+    // Pulls all the user's events into the Calendar
+    var Events = $resource('api/events/:id', {id:'@id'});  
+    $scope.events = Event.query();  
+    $scope.eventSources = [$events.test];
 
-     // $scope.showCalendar = function(i){
-     // 	  $http.get('/api/itineraries/' + i).success(function(data){
-    	//   $scope.eventSources = [data];
-     //      console.log(i);
-    	// });
-     // };
-
+    // Click on events in calendar and events appear below Calendar
     $scope.alertEventOnClick = function(data) {
             $scope.show = data
-            console.log(data);
             $scope.showevent = true;
         }
  
-    var Test = $resource('api/events/:id', {id:'@id'});  
-    $scope.test = Test.query();  
-    $scope.eventSources = [$scope.test];
-
-    // $scope.eventSources = [];
-
-    // $scope.eventSources = [$scope.events, $scope.eventSource];
-    // var Test = $resource('api/itineraries/:id', {id:'@id'});  
-
-
-    // $scope.showCalendar = function(i){
-    //   // console.log(i)
-    //   Test.get({id: i.id}, function(data) {
-    //     // $scope.myCalendar.fullCalendar( 'refetchEvents' );
-    //     $scope.eventSource = [data]
-
-    //     // $('#calendar').fullCalendar( 'refetchEvents' )
-    //   });
-    //   // console.log(test.events)
-    //   // $scope.eventSources = test.events
-    //   // $scope.eventSources = [$scope.test];
-    //   // console.log([$scope.test]);
-    //   // console.log($scope.eventSources);
-    // }
-
-
-
-
-    // $scope.setEventSource = function(locationId) {
-    //     // remove the event source.
-    //     uiCalendarConfig.calendars['myCalendar'].fullCalendar('removeEventSource', $scope.eventSource);
-    //     // Create the new event source url
-    //     $scope.eventSource = {url : "/api/itineraries/" + locationId};
-    //     // add the new event source.
-    //     uiCalendarConfig.calendars['myCalendar'].fullCalendar('addEventSource', $scope.eventSource);
-    //     console.log(locationId);
-    //     }
-
-
-    
-
+    //Configuration for the Angular UI Calendar 
     $scope.uiConfig = {
       calendar:{
         height: 350,
@@ -94,16 +46,3 @@ angular.module("knappApp",["ui.calendar", "ngResource", "ui.bootstrap"])
 
 };
 
-
-
-    // var Event = $resource('api/events/:id', {id:'@id'});
-    // $scope.events = Event.query(); 
-    // $scope.eventSources = [$scope.events];
-
-  //    $scope.eventSources = [];
-  //    $scope.showCalendar = function(i){
-  //   console.log(i);
-  //   var Test = $resource('api/itineraries/:id', {id:'@id'});  
-  //   $scope.test = Test.get({id: i}); 
-  //   $scope.eventSources = [$scope.test];
-  // }
