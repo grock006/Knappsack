@@ -18,8 +18,8 @@
 //= require angular-resource
 
 //= require angular-ui-calendar
-//= require angular-ui-bootstrap-tpls
 //= require angular-ui-bootstrap
+//= require angular-ui-bootstrap-tpls
 //= require fullcalendar
 //= require fullcalendar/gcal
 

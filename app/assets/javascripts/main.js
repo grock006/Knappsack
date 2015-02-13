@@ -1,11 +1,16 @@
-var app = angular.module("knappApp",['ngResource', 'uiGmapgoogle-maps', "ui.calendar", "ui.bootstrap"]);
+var app = angular.module("knappApp",["ui.calendar", "ui.bootstrap",'ngResource', 'uiGmapgoogle-maps']);
 
 //configuration 
-app.config(['$httpProvider',
-    function ($httpProvider) {
-      // send security token to rails with every angular http request
-      $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
-}]);  // .config
+app.config(function($httpProvider) {
+      $httpProvider.defaults.headers.common['X-CSRF-Token'] =
+        $('meta[name=csrf-token]').attr('content');
+    })
+
+// .config(['$httpProvider',
+//     function ($httpProvider) {
+//       // send security token to rails with every angular http request
+//       $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+// }]);  // .config
 
 
 //Itineraries Controller
@@ -32,29 +37,15 @@ app.controller("itineraryController",function($scope, $http, $resource){
             console.log(data);
             $scope.showevent = true;
         };
+
+        var Event = $resource('api/events/:id', {id:'@id'});
+      $scope.events = Event.query(); 
+      $scope.eventSources = [$scope.events];
  
- 
-        $scope.eventSources = {events: [
-        {
-            title: 'Event1',
-            start: '2015-02-04'
-        },
-        {
-            title: 'Event2',
-            start: '2015-02-05'
-        }
-        // etc...
-    ]}
 
-
-  // $http.get('/api/events/').success(function(data){
-  //         $scope.test = data;
-  //         $scope.eventSources = [$scope.test];
-  //       });    
-
-    // var Test = $resource('api/events/:id', {id:'@id'});  
-    // console.log(Test);
+    // var Test = $resource('api/itineraries/:id', {id:'@id'});  
     // $scope.test = Test.query();  
+    //    console.log($scope.test);
     // $scope.eventSources = [$scope.test];
 
 
