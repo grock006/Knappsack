@@ -1,0 +1,59 @@
+<h1><%= @itinerary.name %></h1>
+
+<div class="row">
+
+<div id="owl-example" class="owl-carousel">
+	<% @itinerary.date_range.each do |i|%>
+    <div class="owl-item">
+    <div class="box">
+    	<p><strong><%= i.strftime("%B") %></strong></p> 
+    	<p><em><%= i.strftime("%A") %></em></p>
+    	<h1><%= i.strftime("%d") %></h1>
+    	<a ng-click="<%= i.strftime("%A") %> = !<%= i.strftime("%A") %>"><%= @itinerary.events.where(date: i).count %> EVENTS</a>    
+    </div>
+    </div>
+    <% end %>
+  </div>
+
+
+<% @itinerary.date_range.each do |i|%>
+<div ng-show="<%= i.strftime("%A") %>" class="event-box">
+  <h1>Itinerary For <%= i.strftime("%A")%> <%= i.strftime("%d") %></h1>
+
+        <% @itinerary.events.where(date: i).each do |e| %>
+            <hr>
+            <h3><%= e.start_time.strftime("%I:%M") %> to <%= e.end_time.strftime("%I:%M") %></h3> 
+            <h2><%= e.name.upcase %></h2>
+            <h3><a href="<%= e.main_url %>">Website</a></h3>
+            <h3><%= e.category.capitalize %></h3>
+            <h4><%= e.description %></h4>
+            <p><%= e.date.strftime("%m/%d/%Y") %></p> 
+            <hr>
+        <% end %>
+
+    <br>    
+    <br>   
+    <button ng-click="form = !form" class="btn btn-primary">+ EVENT</button>
+    <br>
+    <br>
+
+    <div ng-show="form">
+
+        <h1>New Event</h1>
+
+          <%= render partial: "itineraries/eventform" %>
+
+    </div>
+
+</div>
+<% end %>
+
+
+
+
+
+
+
+
+</div>
+

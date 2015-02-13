@@ -1,14 +1,77 @@
 <!DOCTYPE html>
-<html>
+<!-- <html ng-app="knappApp"> -->
+<html ng-app="knappApp"  ng-controller="searchController">
 <head>
   <title>Knappsack</title>
+  <%= javascript_include_tag '//maps.googleapis.com/maps/api/js?sensor=false' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <%= csrf_meta_tags %>
 </head>
-<body>
+
+<body ng-controller="itineraryController">
+
+<!-- Sign Up Modal -->
+
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header mod-head">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span style="color: white;" aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <%= render partial: "users/signup", modal: true %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Login Modal -->
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header mod-head">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span style="color: white;" aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+            <!-- Login Form as partial still problematic -->
+            <%= form_for :user, url: '/login' do |f| %>
+            <div class="form-group">
+              Email: <%= f.text_field :email, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              Password: <%= f.password_field :password, class: 'form-control' %>
+            </div>
+            <%= f.submit "login", class: 'btn btn-primary' %>
+            <% end %>
+            <!-- end of form -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- end of login modal -->
+
+<!-- Navbar partial -->
+
+<div class="container-fluid">
+  <%= render partial: 'layouts/nav' %>
+</div>
+
+<!-- Itineraries Form / only available to logged in users -->
+<% if current_user %>
+  <div ng-show="itinform">
+    <%= render partial: "/itineraries/form" %>
+  </div>
+<% end %>
+<!-- end -->
 
 <%= yield %>
 
 </body>
+
 </html>
