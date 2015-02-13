@@ -1,30 +1,31 @@
-angular.module("knappApp",["ui.calendar", "ngResource", "ui.bootstrap"])
-    .config(function($httpProvider) {
+var app = angular.module("knappApp",["ui.calendar", "ui.bootstrap",'ngResource', 'uiGmapgoogle-maps']);
+
+//configuration 
+app.config(function($httpProvider) {
       $httpProvider.defaults.headers.common['X-CSRF-Token'] =
         $('meta[name=csrf-token]').attr('content');
     })
-    .controller("itineraryController", itineraryController);
-    
-    function itineraryController($scope, $http, $resource){
 
-      //Show all the User's Itineraries 
-      $http.get('/api/itineraries/').success(function(data){
-        $scope.results = data;
-        console.log(data)
-      });
+app.controller("itineraryController",function($scope, $http, $resource){
+
+    //Show all the User's Itineraries 
+    $http.get('/api/itineraries/').success(function(data){
+    $scope.results = data;
+    });
 
     // Pulls all the user's events into the Calendar
-    var Events = $resource('api/events/:id', {id:'@id'});  
-    $scope.events = Event.query();  
-    $scope.eventSources = [$events.test];
+    var Event = $resource('api/events/:id', {id:'@id'});
+    $scope.events = Event.query(); 
+    $scope.eventSources = [$scope.events];
 
     // Click on events in calendar and events appear below Calendar
     $scope.alertEventOnClick = function(data) {
             $scope.show = data
+            console.log(data);
             $scope.showevent = true;
-        }
- 
-    //Configuration for the Angular UI Calendar 
+        };
+
+    //Configuration for the Angular UI Calendar     
     $scope.uiConfig = {
       calendar:{
         height: 350,
@@ -44,5 +45,7 @@ angular.module("knappApp",["ui.calendar", "ngResource", "ui.bootstrap"])
     }
 
 
-};
 
+
+
+});
