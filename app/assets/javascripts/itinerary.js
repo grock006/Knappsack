@@ -32,26 +32,44 @@ angular.module("knappApp",["ui.calendar", "ngResource", "ui.bootstrap"])
             $scope.showevent = true;
         }
  
-    var Test = $resource('api/itineraries/:id', {id:'@id'});  
-    itinerary = Test.get({id: 17}); 
-    $scope.eventSources = [itinerary];
+    var Test = $resource('api/events/:id', {id:'@id'});  
+    $scope.test = Test.query();  
+    $scope.eventSources = [$scope.test];
 
     // $scope.eventSources = [];
+
+    // $scope.eventSources = [$scope.events, $scope.eventSource];
     // var Test = $resource('api/itineraries/:id', {id:'@id'});  
 
 
-    $scope.showCalendar = function(i){
-      // console.log(i)
-      Test.get({id: i.id}, function(data) {
-        $scope.eventSources = [data]
-        // $('#calendar').fullCalendar( 'refetchEvents' )
-      });
-      // console.log(test.events)
-      // $scope.eventSources = test.events
-      // $scope.eventSources = [$scope.test];
-      // console.log([$scope.test]);
-      // console.log($scope.eventSources);
-    }
+    // $scope.showCalendar = function(i){
+    //   // console.log(i)
+    //   Test.get({id: i.id}, function(data) {
+    //     // $scope.myCalendar.fullCalendar( 'refetchEvents' );
+    //     $scope.eventSource = [data]
+
+    //     // $('#calendar').fullCalendar( 'refetchEvents' )
+    //   });
+    //   // console.log(test.events)
+    //   // $scope.eventSources = test.events
+    //   // $scope.eventSources = [$scope.test];
+    //   // console.log([$scope.test]);
+    //   // console.log($scope.eventSources);
+    // }
+
+
+
+
+    // $scope.setEventSource = function(locationId) {
+    //     // remove the event source.
+    //     uiCalendarConfig.calendars['myCalendar'].fullCalendar('removeEventSource', $scope.eventSource);
+    //     // Create the new event source url
+    //     $scope.eventSource = {url : "/api/itineraries/" + locationId};
+    //     // add the new event source.
+    //     uiCalendarConfig.calendars['myCalendar'].fullCalendar('addEventSource', $scope.eventSource);
+    //     console.log(locationId);
+    //     }
+
 
     
 
