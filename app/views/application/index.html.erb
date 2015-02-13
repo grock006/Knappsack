@@ -1,12 +1,16 @@
 <div ng-controller="itineraryController">
 
+	<form ng-submit="showCalendar(17);">
+		<button>Change to 17</button>
+	</form>
+
 <h2><strong>TRAVEL ITINERARIES</strong></h2>
 <div ng-repeat="x in results">
 	
 	<div class="itin-box">
 			<h3><strong>{{x.name}}</strong> <em>{{x.start_date | date:"MM/dd/yyyy" }}</em> to <em>{{x.end_date | date:"MM/dd/yyyy"}}</em></h3>
 			
-			<button ng-click="showCalendar(x.id);" class="btn btn-primary">Show Calendar</button>
+			<button ng-click="showCalendar(x);" class="btn btn-primary">Show Calendar</button>
 
 			<div style="float:right">
 				<a href="/itineraries/{{x.id}}/edit">Edit</a> | <a href="/itineraries/{{x.id}}">Show Full Itinerary</a> | <a rel="nofollow" data-method="delete" href="/itineraries/{{x.id}}">X</a>
@@ -14,6 +18,8 @@
 
 	</div>
 </div>
+
+{{eventSources}}
 	
 
 
@@ -24,7 +30,7 @@
 <hr>
 
 			<div class="event-box" ng-show="showevent">
-				<strong>{{show.start | date: "MM/dd/yyyy" }}</strong>
+				<strong>{{show.start._f | date: "MM/dd/yyyy" }}</strong>
 				<br>	
 				<hr>
 				<h3>{{show.title}} @ <em>{{show.location}}</em></h3>

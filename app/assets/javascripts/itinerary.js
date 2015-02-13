@@ -10,6 +10,7 @@ angular.module("knappApp",["ui.calendar", "ngResource", "ui.bootstrap"])
 
       $http.get('/api/itineraries/').success(function(data){
         $scope.results = data;
+        console.log(data)
       });
 
         $scope.showEvents = function(i){
@@ -18,12 +19,12 @@ angular.module("knappApp",["ui.calendar", "ngResource", "ui.bootstrap"])
         });
     };
 
-     $scope.showCalendar = function(i){
-     	  $http.get('/api/itineraries/' + i).success(function(data){
-    	  $scope.eventSources = [data];
-          console.log(i);
-    	});
-     };
+     // $scope.showCalendar = function(i){
+     // 	  $http.get('/api/itineraries/' + i).success(function(data){
+    	//   $scope.eventSources = [data];
+     //      console.log(i);
+    	// });
+     // };
 
     $scope.alertEventOnClick = function(data) {
             $scope.show = data
@@ -32,8 +33,26 @@ angular.module("knappApp",["ui.calendar", "ngResource", "ui.bootstrap"])
         }
  
     var Test = $resource('api/itineraries/:id', {id:'@id'});  
-    $scope.test = Test.get({id: 20}); 
-    $scope.eventSources = [$scope.test];
+    itinerary = Test.get({id: 17}); 
+    $scope.eventSources = [itinerary];
+
+    // $scope.eventSources = [];
+    // var Test = $resource('api/itineraries/:id', {id:'@id'});  
+
+
+    $scope.showCalendar = function(i){
+      // console.log(i)
+      Test.get({id: i.id}, function(data) {
+        $scope.eventSources = [data]
+        // $('#calendar').fullCalendar( 'refetchEvents' )
+      });
+      // console.log(test.events)
+      // $scope.eventSources = test.events
+      // $scope.eventSources = [$scope.test];
+      // console.log([$scope.test]);
+      // console.log($scope.eventSources);
+    }
+
     
 
     $scope.uiConfig = {
