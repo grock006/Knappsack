@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
 			session[:user_id] = user.id 
 			redirect_to '/index'
 		else
+			# flash[:danger] = "Username or password incorrect."
 			redirect_to root_path
 		end
 	end

@@ -39,7 +39,7 @@ class ItinerariesController < ApplicationController
   end
 
   def destroy
-    @itinerary = current_user.itinerary.find(params[:id])
+    @itinerary = current_user.itineraries.find(params[:id])
     
     @itinerary.destroy
     

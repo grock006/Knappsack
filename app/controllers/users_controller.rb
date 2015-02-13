@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
 
 	def new
-		redirect_to events_path if current_user
 		@user = User.new
 	end
 
