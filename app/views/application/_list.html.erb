@@ -1,4 +1,4 @@
-<div class="resultdisplay" ng-controller="eventController">
+<div class="resultdisplay" ng-controller="eventController"> <!--Event Controller To add event to Rails Database-->
 <ul >
    <li ng-repeat="business in businesses">
     <div class="list_outerbox">
@@ -8,8 +8,7 @@
       <div class="list_content">
         <div class="inner_col">
           <div class="business_name">
-              <span ng-click="createEvent()">{{business.name }}</span> <button type="button" ng-click="createEvent(business)">Add</button>
-
+              <span>{{business.name }}</span> <button type="button" ng-click="createEvent(business)">Add</button>
           </div>
           <div class="business_meta">
             <div class="rate"> {{business.rating }} </div>

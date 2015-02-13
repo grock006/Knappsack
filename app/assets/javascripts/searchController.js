@@ -42,7 +42,9 @@ app.controller("searchController",function($scope, SearchResource){
           address3: data.businesses[i].location.address[2],
           display_phone: data.businesses[i].display_phone,
           snippet_image_url: data.businesses[i].snippet_image_url,
-          snippet_text: data.businesses[i].snippet_text
+          snippet_text: data.businesses[i].snippet_text,
+          rating: data.businesses[i].rating,
+          url: data.businesses[i].main_url
       });
     }
       var init_latitude = data.businesses[0].location.coordinate.latitude

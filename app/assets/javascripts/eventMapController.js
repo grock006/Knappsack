@@ -1,4 +1,4 @@
-app.controller("eventController",function($scope, $resource, Event){
+app.controller("eventMapController",function($scope, $resource, Event){
 
   $scope.test = function(){console.log("hello")};
 $scope.makeid = function()
@@ -11,10 +11,11 @@ $scope.makeid = function()
   }
 
  $scope.createEvent = function(business) {
+  console.log(business);
 
     new Event(
       {
-        name: business.name,
+        name: business.venue_name,
         date: "2015-02-25T05:05:06+07:00",
         start_time: "2015-02-25T05:05:06+07:00",
         end_time: "2015-02-24T06:05:06+07:00",
@@ -22,14 +23,14 @@ $scope.makeid = function()
         main_url: business.url,
         rating: business.rating,
         itinerary_id: $scope.makeid(), //create random id for the event id
-        location: business.location.display_address[0],
-        category: business.categories[0][0]
+        location: business.address1,
+        category: business.category
       }
     ).$save(function(data){
       console.log(data);
       // $state.go("allEvents")
     });
-  } 
+  };
 }); // End of Controller Functio
 
 
