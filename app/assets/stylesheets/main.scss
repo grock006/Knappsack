@@ -62,12 +62,12 @@ body {
 }
 
 .b3b {
-	font-size: 18px;
+	font-size: 29px;
 	font-weight: 900;
 	color: $navy;
-	border-bottom: 1px $navy solid;
+	/* border-bottom: 1px #09193e solid; */
 	text-align: left;
-	line-height: 75px;
+	line-height: 0;
 }
 
 .b4 {
@@ -107,6 +107,22 @@ body {
 .mod-head {
 	background-color: $navy;
 	color: $blue;
+}
+
+.fc-button {
+	appearance: none;
+	background-color: ($blue) !important;
+	color: $navy;
+	border: none;
+}
+
+.fc-center {
+	font-size: 29px;
+	font-weight: 900;
+	color: $red;
+	/* border-bottom: 1px #09193e solid; */
+	text-align: left;
+	line-height: 0;
 }
 
 .btn-primary {
@@ -286,7 +302,7 @@ body {
 	background-color: $grey2;
 	border: solid 1px $grey;
 	padding: 40px;
-	padding-bottom: 60px;
+	margin-top: 545px;;
 }
 
 .edit-itin-form {
@@ -301,6 +317,14 @@ body {
 	.links-inner {
 		margin-top: 0px;
 	}
+}
+
+// Cal
+
+.cal {
+	background-color: $grey2;
+	padding:20px;
+	border: 1px solid $grey;
 }
 
 // .itin-box {
