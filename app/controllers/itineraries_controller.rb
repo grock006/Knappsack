@@ -2,20 +2,20 @@ class ItinerariesController < ApplicationController
 	
 	def index
     if current_user
-		@itinerary = current_user.itineraries.all.order(created_at: :desc)
+		  @itinerary = current_user.itineraries.all.order(created_at: :desc)
     end
 	end
 
 	def show
-    	@itinerary = current_user.itineraries.find(params[:id])
+    @itinerary = current_user.itineraries.find(params[:id])
   end
 
   def new
-    	@itinerary = Itinerary.new
+  	@itinerary = Itinerary.new
   end
 
   def create
-    	@itinerary = current_user.itineraries.new(itinerary_params)
+  	@itinerary = current_user.itineraries.new(itinerary_params)
 
     if @itinerary.save
       redirect_to "/index"
@@ -40,9 +40,7 @@ class ItinerariesController < ApplicationController
 
   def destroy
     @itinerary = current_user.itinerary.find(params[:id])
-    
     @itinerary.destroy
-    
     redirect_to "/index"
   end
 
