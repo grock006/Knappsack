@@ -26,3 +26,13 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+  	<% @itinerary.events.each do |e| %>
+    <hr>
+	<h3><%= e.start_time.strftime("%I:%M") %> to <%= e.end_time.strftime("%I:%M") %></h3>	
+	<h2><%= e.name.upcase %></h2>
+	<h3><%= e.category.capitalize %></h3>
+  <h4><%= e.description %></h4>
+	<p><%= e.date.strftime("%m/%d/%Y") %></p>	
+    <hr>
+	<% end %>

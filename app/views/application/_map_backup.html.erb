@@ -1,0 +1,29 @@
+<%= javascript_include_tag "//maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry" %>
+<%= javascript_include_tag "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
+
+<div style='float:left; width: 700px; height: 500px; '>
+  <div id="map" style='width: 700px; height: 500px;'></div>
+</div>
+
+<script style="text/javascript">
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers( 
+    <%= raw @hash.to_json %>
+    );
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
+</script>
+
+
+    # Google Map Function
+
+        # @hash = []
+
+        # @result.each do |business|
+
+        #   @map_marker= Hash[:lat=> business.location.coordinate.latitude, :lng=> business.location.coordinate.longitude, 
+        #     :infowindow=> business.name]
+        #   @hash.push(@map_marker)
+        # end

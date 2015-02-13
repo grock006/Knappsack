@@ -1,0 +1,57 @@
+
+<display style="border: 3px solid blue; width: 500px height: 500px">
+<%= render partial: "list" %>
+</display>
+<%= render partial: "map" %>
+
+<div class="container show-itin">
+		<div ng-show="selectitin" ng-hide="showitin">
+		<!-- <h2><strong>TRAVEL ITINERARIES</strong></h2> -->
+			<div ng-repeat="x in results">
+				<div class="">
+						<h3><strong>{{x.name}}</strong> <em>{{ x.start_date | date:"MM/dd/yyyy" }}</em> to <em>{{ x.end_date | date:"MM/dd/yyyy" }}</em></h3>
+						<a href="#" ng-click="showCalendar(x.id)">Show Calendar</a>
+						<div style="">
+						<a href="/itineraries/{{x.id}}/edit">Edit</a> | <a href="/itineraries/{{x.id}}">Show Full Itinerary</a> | <a rel="nofollow" data-method="delete" href="/itineraries/{{x.id}}">X</a>
+						</div>
+				</div>
+			</div>
+			</div>
+	 		<div ng-repeat="x in calendar.date_range" class="">
+		    <div class="">
+		    	<p><strong>{{ x | date:"MMMM"}}</strong></p> 
+		    	<p><em>{{ x | date:"EEEE"}}</em></p>
+		    	<h1>{{ x | date:"dd"}}</h1>
+		    	<a href="#" ng-click="showEvents(calendar.itinerary.id)">{{calendar.events.length }}</a> 
+		    	  <!-- Needs to display # of events on that itinerary date  -->
+		    	  <!-- Events with the same itinerary_id filtered by the same date -->
+		    </div>
+
+	</div>
+
+<!-- Needs to display events filtered by itinerary_id and date and start_time -->
+<div ng-repeat="x in show.events ">
+	<div class="event-box">
+	<strong>{{x.date | date:"MM/dd/yyyy" }} @ <em>{{ x.start_time | date:"h:mma"}} TO {{x.end_time | date:"h:mma"}}</em></strong><br>	
+	<hr>
+	<h3>{{x.name}} @ <em>{{x.location}}</em></h3>
+	<em>{{x.category}}</em><br>
+	{{x.description}}<br>
+	<a href="{{x.main_url}}">Website</a><br>
+	<hr>
+	<div>
+	<br>
+	<button class="btn btn-primary" ng-click="showevent =!showevent"> + EVENT </button>
+	<br>
+	<br>
+<div ng-show="showevent">
+	<%= render partial: "events/eventform" %>
+</div>
+</div>
+
+</div>
+
+
+
+
+
