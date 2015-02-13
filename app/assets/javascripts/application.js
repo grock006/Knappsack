@@ -20,4 +20,5 @@
 //= require bootstrap-sprockets
 //= require app
 //= require underscore
+//= require main
 //= require_tree .

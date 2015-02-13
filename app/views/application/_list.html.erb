@@ -1,6 +1,6 @@
-<div class="resultdisplay">
-<ul ng-repeat="business in businesses">
-   <li>
+<div class="resultdisplay" ng-controller="eventController">
+<ul >
+   <li ng-repeat="business in businesses">
     <div class="list_outerbox">
       <div class="list_index">
        {{ $index + 1 }}.
@@ -8,7 +8,8 @@
       <div class="list_content">
         <div class="inner_col">
           <div class="business_name">
-              {{business.name }}
+              <span ng-click="createEvent()">{{business.name }}</span> <button type="button" ng-click="createEvent()"> test</button>
+
           </div>
           <div class="business_meta">
             <div class="rate"> {{business.rating }} </div>
