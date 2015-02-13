@@ -1,17 +1,23 @@
+<!-- Map and search results -->
+
 <section>
-<display class="srch-results">
-	<div>
-		<%= render partial: "list" %>
-	</div>
-</display>
-<%= render partial: "map" %>
+	<!-- Search Results -->
+	<display class="srch-results">
+		<div>
+			<%= render partial: "list" %>
+		</div>
+	</display>
+	<!-- Map -->
+	<%= render partial: "map" %>
 </section>
+
+<!-- Itineraries -->
 
 <section>
 <div class="container show-itin">
 		<div ng-show="selectitin" ng-hide="showitin">
 			<div ng-repeat="x in results">
-				<div class="col-md-4 itin">
+				<div class="col-md-4 itin itin-deets">
 						<div class="b3b">{{x.name}} <em>{{ x.start_date | date:"MM/dd/yyyy" }}</em> to <em>{{ x.end_date | date:"MM/dd/yyyy" }}</em></div>
 						<a href="#" ng-click="showCalendar(x.id)">Show Calendar</a>
 						<div class="f2">
@@ -32,6 +38,8 @@
 	</div>
 </div>
 </section>
+
+<!-- Events (old) -->
 
 <!-- Needs to display events filtered by itinerary_id and date and start_time -->
 <div ng-repeat="x in show.events ">

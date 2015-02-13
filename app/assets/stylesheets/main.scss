@@ -11,8 +11,8 @@ body {
 $red:  #ed1c24;
 $navy: #09193e;
 $blue: #81dbeb;
-$grey: #ddddd8;
-$grey2: #f3f3f3;
+$grey: #dedede;
+$grey2: #e6e6e6;
 
 // fonts
 
@@ -271,13 +271,9 @@ th {
 	color: #81dbeb;
 }
 
-// .outer-box {
-// 	display: inline-block;
-// }
-
 .show-itin {
 	width: 100%;
-	margin-top: 650px;
+	margin-top: 565px;
 	margin-bottom: 75px;
 }
 
@@ -288,6 +284,17 @@ th {
 .itin-form {
 	margin-top: 66px;
 	background-color: $grey2;
+}
+
+.itin {
+	background-color: $grey2;
+	border: solid 1px $grey;
+	padding: 10px;
+}
+
+.edit-itin-form {
+	margin-top: 66px;
+	background-color: $grey;
 }
 
 .menu-links {
@@ -392,11 +399,12 @@ border-color: 1px solid white;
 .resultdisplay {
 	float: left;
 	overflow-x: scroll;
-	height: 455px;
+	height: 500px;
 	/* width: 450px; */
-	margin-top: 90px;
-	margin-bottom: 100px;
+	margin-top: 65px;
+	// margin-bottom: 100px;
 	padding-left: 15px;
+	padding-top: 40px;
 }
 
 
