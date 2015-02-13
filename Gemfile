@@ -16,8 +16,6 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Angularjs
-gem 'angularjs-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -60,7 +58,7 @@ gem 'angular-ui-bootstrap-rails'
 
 gem 'angular-rails-templates'
 
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
