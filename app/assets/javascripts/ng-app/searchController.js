@@ -1,4 +1,6 @@
-app.controller("searchController",function($scope, SearchResource){
+angular
+  .module("knappApp")
+  .controller("searchController",function($scope, SearchResource){
 
     // $scope.test ="Hello Hello"
  

@@ -17,6 +17,10 @@
 //= require angular-animate
 //= require angular-resource
 
+//= require angular-ui-router
+//= require angular-rails-templates
+//= require_tree ../templates
+
 //= require angular-ui-calendar
 //= require angular-ui-bootstrap
 //= require angular-ui-bootstrap-tpls
@@ -26,6 +30,7 @@
 //= require bootstrap-sprockets
 //= require app
 //= require underscore
+//= require ng-app/main
 //= require_tree .
 
 

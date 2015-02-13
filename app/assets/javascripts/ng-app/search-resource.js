@@ -1,4 +1,6 @@
-app.factory("SearchResource", function($resource) {
+angular
+  .module("knappApp")
+  .factory("SearchResource", function($resource) {
 
   return function(limit_value, keyword, location, category){
 

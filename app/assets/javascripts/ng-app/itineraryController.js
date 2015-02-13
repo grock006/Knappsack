@@ -1,12 +1,6 @@
-var app = angular.module("knappApp",["ui.calendar", "ui.bootstrap",'ngResource', 'uiGmapgoogle-maps']);
-
-//configuration 
-app.config(function($httpProvider) {
-      $httpProvider.defaults.headers.common['X-CSRF-Token'] =
-        $('meta[name=csrf-token]').attr('content');
-    })
-
-app.controller("itineraryController",function($scope, $http, $resource){
+angular
+  .module("knappApp")
+  .controller("itineraryController",function($scope, $http, $resource){
 
     //Show all the User's Itineraries 
     $http.get('/api/itineraries/').success(function(data){
@@ -43,9 +37,5 @@ app.controller("itineraryController",function($scope, $http, $resource){
         dayClick: $scope.alertDayOnClick
       }
     }
-
-
-
-
 
 });
