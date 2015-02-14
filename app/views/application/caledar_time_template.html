@@ -1,0 +1,38 @@
+<div ng-controller="eventMapController" style="border: 3px solid black; width: 400px; height:250px;">
+  <button type="button" ng-click="">test</button><br><br>
+    <h4>Starting Date</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="start_date" is-open="opened" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+    </div>
+
+      <h4>End Date</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="end_date" is-open="end_opened" min-date="minDate"datepicker-options="dateOptions"  ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="endOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+    </div>
+
+  date: <span>{{start_date}}</span><br>
+  End Date: <span>{{end_date}}</span>
+  <br><br>
+  Start Time: <timepicker ng-model="start_time" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker><br>
+  End Time: <timepicker ng-model="end_time" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker><br>
+
+ 
+ 
+  Start Time: {{start_time}}<br>
+  End Time: {{end_time}}
+ </div>
+<!--End of Date Picker-->

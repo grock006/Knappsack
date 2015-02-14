@@ -11,6 +11,7 @@ class EventsController<ApplicationController
 
 	def create
 		@event = Event.new(event_params)
+    @event.date = Time.at( @event.date / 1000.0 )
 		if @event.save
 		 	 redirect_to events_path
 		else
