@@ -88,9 +88,9 @@ $scope.makeid = function()
     new Event(
       {
         name: business.name,
-        date: '2002-01-01',
-        start_time: start_date_millisecond,
-        end_time: start_date_millisecond,
+        date: '2015-02-25T05:05:06+07:00',
+        start_time: '2015-02-25T05:05:06+07:00',
+        end_time: '2015-02-25T05:05:06+07:00',
         description: business.snippet_text,
         main_url: business.url,
         rating: business.rating,

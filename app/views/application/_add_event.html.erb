@@ -1,4 +1,4 @@
-    
+<!-- Day Picker-->
     <div class="row">
         <div style="padding-left: 30px; width: 200px; height: 50px; float:left">
           <span>Starting Date:</span>
@@ -21,5 +21,22 @@
             </p>
         </div>
     </div>
+<!-- Time Picker-->
+      <div class="row" style="padding-top: 10px;">
+        <div style="padding-left: 30px; width: 200px; height: 50px; float:left">
+          <span>Starting Time:</span>
+<timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+            </p>
+        </div>
 
-    <button ng-click="createEvent(business, start_date, end_date)"></button>
+        <div style="padding-left: 30px ;width: 200px; height: 50px;float:left">
+           <span>End Time:</span>
+<timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+        </div>
+    </div>
+
+   
+    <div class="row" style="3px solid blue">
+      <input id="checkSlave" type="checkbox" ng-checked="">
+         <button ng-click="createEvent(business, start_date, end_date)"></button>
+    </div>
