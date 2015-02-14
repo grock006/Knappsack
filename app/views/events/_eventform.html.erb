@@ -1,35 +1,48 @@
-<form class="new_event ng-pristine ng-valid" id="new_event" action="/events" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="U0+9Do2R6tVxAQLAiFEp8vHJMaRb9t4Dqc9kcXvqqLEJmUtW05JR8pJ4ETQwBN5cxuiUKV6cd3qGWjRKuZbVCg==">
-         
-            <div class="form-group">
-              <input class="form-control" type="text" name="event[name]" id="event_name" placeholder="Name">
-            </div>
 
-               <div class="form-group form-inline">
-              Date <input class="form-control" type="date" name="event[date]" id="event_date" placeholder="Date">
-              Start Time <input class="form-control" type="time" name="event[start_time]" id="event_start_time" placeholder="Start Time">
-              End Time <input class="form-control" type="time" name="event[end_time]" id="event_end_time" placeholder="End Time">
+<form class="new_event ng-pristine ng-valid form-group" id="new_event" action="/events" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="U0+9Do2R6tVxAQLAiFEp8vHJMaRb9t4Dqc9kcXvqqLEJmUtW05JR8pJ4ETQwBN5cxuiUKV6cd3qGWjRKuZbVCg=="></form>
+          <div class="container">
+            <!-- name -->
+            <div class="row">
+              <div class="form-group col-md-6">
+                <input class="form-control" type="text" name="event[name]" id="event_name" placeholder="Name">
               </div>
-            
-            <div class="form-group">
-              <input class="form-control" type="text" name="event[category]" id="event_category" placeholder="Category">
+              <!-- category -->
+              <div class="form-group col-md-6">
+                <input class="form-control" type="text" name="event[category]" id="event_category" placeholder="Category">
+              </div>
             </div>
-
-            <div class="form-group">
-              <textarea class="form-control" name="event[description]" id="event_description" placeholder="Description"></textarea>
+            <!-- Date & Time -->
+            <div class="row">
+              <div class="form-group col-md-12">
+                <input class="form-group form-control" type="date" name="event[date]" id="event_date" placeholder="Date">
+                <input class="form-group form-control" type="time" name="event[start_time]" id="event_start_time" placeholder="Start Time">
+                <input class="form-group form-control" type="time" name="event[end_time]" id="event_end_time" placeholder="End Time">
+              </div>
             </div>
-
-        
-
-          <div class="form-group">
-              <input class="form-control" type="text" name="event[location]" id="event_location" placeholder="Location">
+            <!-- Description -->
+            <div class="row">
+              <div class="form-group col-md-12">
+                <textarea class="form-control" name="event[description]" id="event_description" placeholder="Description"></textarea>
+              </div>
+            </div>
+            <!-- Location -->
+            <div class="row">
+              <div class="form-group col-md-12">
+                <input class="form-control" type="text" name="event[location]" id="event_location" placeholder="Location">
+              </div>
             </div>
   
-              <input class="form-control" type="hidden" name="event[itinerary_id]" id="event_itinerary_id">
-
-            <div class="form-group form-inline">
-              <input class="form-control" type="text" name="event[rating]" id="event_rating" placeholder="Rating">
-              <input class="form-control" type="text" name="event[main_url]" id="event_main_url" placeholder="Website">
-              <input type="submit" name="commit" value="Submit" class="form-control btn btn-primary">
+            <input type="hidden" name="event[itinerary_id]" id="event_itinerary_id">
+            
+            <div class="row">
+              <div class="form-group col-md-6">
+                <input class="form-control" type="text" name="event[rating]" id="event_rating" placeholder="Rating">
+              </div>
+              <div class="form-group col-md-6">
+                <input class="form-control" type="text" name="event[main_url]" id="event_main_url" placeholder="Website">
+              </div>
             </div>
-
-</form>
+            <div class="row">
+              <input class="form-control btn btn-primary col-md-2" type="submit" name="commit" value="Submit">
+            </div>
+</div>
