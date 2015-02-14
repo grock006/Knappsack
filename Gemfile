@@ -59,6 +59,8 @@ gem 'momentjs-rails'
 
 gem 'angular-ui-bootstrap-rails'
 
+gem "rails_12factor"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
