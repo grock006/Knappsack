@@ -23,7 +23,7 @@ module Api
 
   private
     def event_params
-      params.require(:event).permit(:name, :date, :start_time, :end_time, :category, :description, :rating, :main_url, :location, :itinerary_id)
+      params.require(:event).permit(:title, :start, :end, :category, :description, :rating, :main_url, :location, :itinerary_id)
     end
 
 

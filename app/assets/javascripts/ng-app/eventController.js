@@ -14,8 +14,8 @@ $scope.makeid = function()
 
     new Event(
       {
-        name: business.name,
-        date: "2015-02-25T05:05:06+07:00",
+        title: business.name,
+        start: "2015-02-14",
         start_time: "2015-02-25T05:05:06+07:00",
         end_time: "2015-02-24T06:05:06+07:00",
         description: business.snippet_text,
