@@ -8,9 +8,9 @@ class SessionsController < ApplicationController
 
 		if user && user.authenticate(params[:user][:password])
 			session[:user_id] = user.id 
-			redirect_to root_path
+			redirect_to "/index"
 		else
-			# flash[:danger] = "Username or password incorrect."
+			flash[:danger] = "Username or password incorrect."
 			redirect_to root_path
 		end
 	end

@@ -45,4 +45,3 @@ angular.module("knappApp",["ui.calendar", "ngResource", "ui.bootstrap"])
 
 
 };
-

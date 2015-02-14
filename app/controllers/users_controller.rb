@@ -10,9 +10,9 @@ class UsersController < ApplicationController
 
 		if @user.save
 			session[:user_id] = @user.id.to_s
-			redirect_to root_path
+			redirect_to '/index'
 		else
-			flash.now[:danger] = "Something is wrong"
+			flash.now[:danger] = "Check yo self, invalid form!"
 			render :index
 		end
 	end
