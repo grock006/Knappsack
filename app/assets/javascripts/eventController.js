@@ -68,6 +68,10 @@ $scope.start_time = new Date();
 
   /*End Install*/
 
+/*  Collapse Flag*/
+$scope.isCollapsed = true;
+
+
 $scope.makeid = function()
   {
     var text = "";
@@ -84,6 +88,9 @@ $scope.makeid = function()
 
     console.log("Start Date Millisecond: " + start_date_millisecond);
     console.log("End Date Millisecond: " + end_date_millisecond);
+    console.log("Start Time: " + start_time);
+    console.log("End Time: " + end_time);
+    console.log("Full Day: " + fullday);
 
     new Event(
       {

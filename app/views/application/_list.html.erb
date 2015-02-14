@@ -24,9 +24,11 @@
         </div>
       </div>     
     </div>
-    <div style="width: 380px; height:230px;">
-      <%= render partial: "add_event"%>
-    </div>
+
+      <button class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Add Event</button>
+      <div collapse="isCollapsed" style="width: 380px; height:230px;">
+          <%= render partial: "add_event"%>
+       </div> 
    </li>
   </ul>
 </div>
