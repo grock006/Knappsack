@@ -9,13 +9,15 @@
 		
 	<div class="calendar cal" ng-model="eventSources" calendar="myCalendar" config="uiConfig.calendar" ui-calendar="uiConfig.calendar"></div>
 
-	<div class="event-box" ng-show="showevent">
-			<strong>{{show.start._d | date: "medium" }} {{show.end._d | date: "MM/dd/yyyy" }}</strong>
-			<h3>{{show.title}} @ <em>{{show.location}}</em></h3>
-			<em>{{show.category}}</em><br>
-			{{show.description}}<br>
-			<a href="{{show.main_url}}">Website</a><br>
-			<button class="btn btn-primary" ng-click="showeventform =!showeventform"> + EVENT </button>
+	<div class="event-form" ng-show="showevent">
+				<div class="event-info">
+					<div class="b5">{{show.start._d | date: "medium" }} {{show.end._d | date: "MM/dd/yyyy" }}</div>
+					<div>{{show.title}} @ <em>{{show.location}}</em></div>
+					<div>{{show.category}}</div><br>
+					{{show.description}}<br>
+					<duv><a href="{{show.main_url}}">Website</a></duv><br>
+					<button class="btn btn-primary" ng-click="showeventform =!showeventform"> + EVENT </button>
+				</div>
 			<br>
 			<div ng-show="showeventform">
 				<%= render partial: "events/eventform" %>

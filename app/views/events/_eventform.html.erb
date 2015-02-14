@@ -1,6 +1,6 @@
+<div class="container">
 
-<form class="new_event ng-pristine ng-valid form-group" id="new_event" action="/events" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="U0+9Do2R6tVxAQLAiFEp8vHJMaRb9t4Dqc9kcXvqqLEJmUtW05JR8pJ4ETQwBN5cxuiUKV6cd3qGWjRKuZbVCg=="></form>
-          <div class="container">
+<form class="new_event ng-pristine ng-valid" id="new_event" action="/events" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="U0+9Do2R6tVxAQLAiFEp8vHJMaRb9t4Dqc9kcXvqqLEJmUtW05JR8pJ4ETQwBN5cxuiUKV6cd3qGWjRKuZbVCg==">
             <!-- name -->
             <div class="row">
               <div class="form-group col-md-6">
@@ -13,10 +13,26 @@
             </div>
             <!-- Date & Time -->
             <div class="row">
-              <div class="form-group col-md-12">
-                <input class="form-group form-control" type="date" name="event[date]" id="event_date" placeholder="Date">
-                <input class="form-group form-control" type="time" name="event[start_time]" id="event_start_time" placeholder="Start Time">
-                <input class="form-group form-control" type="time" name="event[end_time]" id="event_end_time" placeholder="End Time">
+              <div class="form-group col-md-4">
+                <div class="form-group">
+                  <label for="event_date">Date</label>
+                  <input class="form-control" type="date" name="event[date]" id="event_date" placeholder="Date">
+                </div>  
+            </div>
+            <div class="row">
+              <div class="form-group col-md-4">
+                <div class="form-group">
+                  <label for="event_start_time">Start Time</label>
+                  <input class="form-control" type="time" name="event[start_time]" id="event_start_time" placeholder="Start Time">
+                </div>
+              </div>
+            </div>    
+            <div class="row">
+              <div class="form-group col-md-4"> 
+                <div class="form-group"> 
+                  <label for="event_end_time">End Time</label>
+                  <input class="form-control" type="time" name="event[end_time]" id="event_end_time" placeholder="End Time">
+                </div>
               </div>
             </div>
             <!-- Description -->
@@ -45,4 +61,5 @@
             <div class="row">
               <input class="form-control btn btn-primary col-md-2" type="submit" name="commit" value="Submit">
             </div>
+</form>
 </div>

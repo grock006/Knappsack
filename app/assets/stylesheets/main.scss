@@ -157,6 +157,7 @@ h2 {
 	font-size: 29px;
 	font-weight: 900;
 	color: $navy;
+	/* border-bottom: 1px #09193e solid; */
 	text-align: left;
 	line-height: 0;
 	text-decoration: none;
@@ -345,6 +346,17 @@ h2 {
 	border: solid 1px $grey;
 	padding: 40px;
 	margin-top: 545px;;
+}
+
+.event-form {
+	background-color: $grey2;
+	border: solid 1px $grey;
+	padding: 40px;
+}
+
+.event-info {
+	margin-top: 30px;
+	margin-left: 30px;
 }
 
 .edit-itin-form {
