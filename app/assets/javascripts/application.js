@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require angular
 //= require angular-ui-bootstrap
+//= require angular-ui-bootstrap-tpls
 //= require example
 //= require angular-animate
 //= require angular-resource
