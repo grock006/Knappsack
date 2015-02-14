@@ -77,7 +77,7 @@ $scope.makeid = function()
     return text;
   }
 
- $scope.createEvent = function(business, start_date, end_date) {
+ $scope.createEvent = function(business, start_date, end_date, start_time, end_time, fullday) {
 
     var start_date_millisecond = start_date.getTime();
      var end_date_millisecond = end_date.getTime();
@@ -103,7 +103,7 @@ $scope.makeid = function()
       // $state.go("allEvents")
     });
   } 
-}); // End of Controller Functio
+}); // End of Controller Function
 
 
 
