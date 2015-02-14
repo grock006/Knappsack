@@ -23,20 +23,19 @@
     </div>
 <!-- Time Picker-->
       <div class="row" style="padding-top: 10px;">
-        <div style="padding-left: 30px; width: 200px; height: 50px; float:left">
+        <div style="padding-left: 30px; width: 200px; height: 125px; float:left">
           <span>Starting Time:</span>
 <timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
             </p>
         </div>
 
-        <div style="padding-left: 30px ;width: 200px; height: 50px;float:left">
+        <div style="padding-left: 40px ;width: 200px; height: 125px;float:left">
            <span>End Time:</span>
 <timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
         </div>
     </div>
 
-   
-    <div class="row" style="3px solid blue">
-      <input id="checkSlave" type="checkbox" ng-checked="">
-         <button ng-click="createEvent(business, start_date, end_date)"></button>
+    <div class="row" style="padding-left: 25px">
+      Full Day: <input id="checkSlave" type="checkbox" ng-checked="">
+         <button ng-click="createEvent(business, start_date, end_date)">Add</button>
     </div>
