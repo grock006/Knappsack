@@ -1,0 +1,31 @@
+<div ng-controller="itineraryController">
+
+			<div ng-repeat="x in results">	
+				<div class="itin-box" style="background-color:white;padding:20px;border:2px solid black;">
+						<h3><strong>{{x.name}}</strong> <em>{{x.start_date | date:"MM/dd/yyyy" }}</em> to <em>{{x.end_date | date:"MM/dd/yyyy"}}</em></h3>
+				</div>
+			</div>
+
+
+						<div class="calendar" ng-model="eventSources" calendar="myCalendar" config="uiConfig.calendar" ui-calendar="uiConfig.calendar" style="background-color:white;padding:20px;border:2px solid black;">
+						</div>
+
+			<br>
+			<hr>
+
+			<div class="event-box" ng-show="showevent">
+				<strong>{{show.start._d | date: "medium" }} {{show.end._d | date: "MM/dd/yyyy" }}</strong>
+				<h3>{{show.title}} @ <em>{{show.location}}</em></h3>
+				<em>{{show.category}}</em><br>
+				{{show.description}}<br>
+				<a href="{{show.main_url}}">Website</a><br>
+				<button class="btn btn-primary" ng-click="showeventform =!showeventform"> + EVENT </button>
+					<br>
+					<div ng-show="showeventform">
+						<br>
+					
+						<hr>
+					</div>
+			<div>
+			
+</div>

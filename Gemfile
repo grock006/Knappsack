@@ -46,6 +46,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Activerecord form validation gem for datetime
 gem 'validates_timeliness', '~> 3.0'
 
+#gems for the angular ui calendar
+gem 'angular-ui-calendar-rails'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
