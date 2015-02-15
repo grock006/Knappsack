@@ -1,0 +1,41 @@
+<!-- Day Picker-->
+    <div class="row">
+        <div style="padding-left: 30px; width: 200px; height: 50px; float:left">
+          <span>Starting Date:</span>
+            <p class="input-group" style="width: 150px; height: 25px; float:left">
+              <input style="height: 25px;" type="text" class="form-control" datepicker-popup="{{format}}" ng-model="start_date" is-open="opened[$index]" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button style="padding: 0px; height: 25px; width: 25px;" type="button" class="btn btn-default" ng-click="open($event, $index)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+
+
+        <div style="padding-left: 40px ;width: 200px; height: 50px;float:left">
+           <span>End Date:</span>
+            <p class="input-group" style="width:150px; height: 25px; float:left">
+              <input  style="height: 25px;" type="text" class="form-control" datepicker-popup="{{format}}" ng-model="end_date" is-open="end_opened[$index]" min-date="minDate"datepicker-options="dateOptions"  ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button style="height: 25px; width: 25px;padding: 0px; " type="button" class="btn btn-default" ng-click="endOpen($event, $index)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+    </div>
+<!-- Time Picker-->
+      <div class="row" style="padding-top: 10px;">
+        <div style="padding-left: 30px; width: 200px; height: 125px; float:left">
+          <span>Starting Time:</span>
+<timepicker ng-model="start_time" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+            </p>
+        </div>
+
+        <div style="padding-left: 40px ;width: 200px; height: 125px;float:left">
+           <span>End Time:</span>
+<timepicker ng-model="end_time"  hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+        </div>
+    </div>
+
+    <div class="row" style="padding-left: 25px">
+      Full Day:  <input type="checkbox" ng-model="fullday"> 
+         <button ng-click="createEvent(business, start_date, end_date, start_time, end_time, fullday)">Add</button>
+    </div>

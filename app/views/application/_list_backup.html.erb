@@ -8,7 +8,7 @@
       <div class="list_content">
         <div class="inner_col">
           <div class="business_name">
-              <span>{{business.name }}</span>
+              <span>{{business.name }}</span> 
           </div>
           <div class="business_meta">
             <div class="rate"> {{business.rating }} </div>
@@ -24,8 +24,7 @@
         </div>
       </div>     
     </div>
-    
-    <!--Add Event Button Section-->
+
       <button class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Add Event</button>
       <div collapse="isCollapsed" style="width: 380px; height:230px;">
           <%= render partial: "add_event"%>

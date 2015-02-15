@@ -1,6 +1,76 @@
 app.controller("eventController",function($scope, $resource, Event){
 
-  $scope.test = function(){console.log("hello")};
+   $scope.opened = [] ;
+   $scope.end_opened = [] ;
+
+  /*Install Date and Times*/
+  $scope.today = function() {
+    $scope.start_date = new Date();
+    $scope.end_date = new Date();
+  };
+  $scope.today();
+
+  // Disable weekend selection
+  $scope.disabled = function(date, mode) {
+    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+  };
+
+  $scope.toggleMin = function() {
+    $scope.minDate = $scope.minDate ? null : new Date();
+  };
+  $scope.toggleMin();
+
+    $scope.open = function($event, num) {
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.opened[num] = true;
+  };
+
+    $scope.endOpen = function($event, num) {
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.end_opened[num] = true;
+  };
+
+  $scope.dateOptions = {
+    formatYear: 'yy',
+    startingDay: 1
+  };
+
+  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+  $scope.format = $scope.formats[3];
+
+
+/*End Install Date and Dates*/
+
+/*Times Method */
+
+$scope.start_time = new Date();
+
+  $scope.end_time = new Date();
+
+  $scope.hstep = 1;
+  $scope.mstep = 15;
+
+  $scope.options = {
+    hstep: [1, 2, 3],
+    mstep: [1, 5, 10, 15, 25, 30]
+  };
+
+  $scope.ismeridian = true;
+  $scope.toggleMode = function() {
+    $scope.ismeridian = ! $scope.ismeridian;
+  };
+
+
+
+  /*End Install*/
+
+/*  Collapse Flag*/
+$scope.isCollapsed = true;
+
 $scope.makeid = function()
   {
     var text = "";
