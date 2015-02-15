@@ -127,46 +127,6 @@ h2 {
 	color: $blue;
 }
 
-.fc-button {
-	appearance: none;
-	background-color: ($blue) !important;
-	color: $navy;
-	border: none;
-}
-
-.fc-state-active {
-	appearance: none;
-	background-color: ($blue) !important;
-	color: $navy;
-	border: none;
-}
-
-.fc-state-default {
-	appearance: none;
-	background-color: ($blue) !important;
-	color: $navy;
-	border: none;	
-}
-
-.fc-state-down {
-	background-image: none;
-	box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0), 0 0px 0px rgba(0, 0, 0, 0);
-}
-
-.fc-center {
-	font-size: 29px;
-	font-weight: 900;
-	color: $navy;
-	/* border-bottom: 1px #09193e solid; */
-	text-align: left;
-	line-height: 0;
-	text-decoration: none;
-}
-
-.fc-unthemed .fc-today {
-	background-color: #f3f3f3;
-}
-
 .btn-primary {
 	background-color: ($blue) !important;
 	color: $navy;
@@ -589,5 +549,45 @@ div.resultdisplay::-moz-scrollbars-vertical {
 
 .error {
 	margin-top: 80px;
+}
+
+.fc-button {
+	appearance: none;
+	background-color: ($blue) !important;
+	color: $navy;
+	border: none;
+}
+
+.fc-state-active {
+	appearance: none;
+	background-color: ($blue) !important;
+	color: $navy;
+	border: none;
+}
+
+.fc-state-default {
+	appearance: none;
+	background-color: ($blue) !important;
+	color: $navy;
+	border: none;	
+}
+
+.fc-state-down {
+	background-image: none;
+	box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0), 0 0px 0px rgba(0, 0, 0, 0);
+}
+
+.fc-center {
+	font-size: 29px;
+	font-weight: 900;
+	color: $navy;
+	/* border-bottom: 1px #09193e solid; */
+	text-align: left;
+	line-height: 0;
+	text-decoration: none;
+}
+
+.fc-unthemed .fc-today {
+	background-color: #f3f3f3;
 }
 
