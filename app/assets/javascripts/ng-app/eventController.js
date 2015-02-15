@@ -80,20 +80,35 @@ $scope.makeid = function()
     return text;
   }
 
- $scope.createEvent = function(business) {
+ $scope.createEvent = function(business, start_date, end_date, start_time, end_time, fullday) {
+
+    $scope.addZero = function(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    };
+
+    $scope.convertTime = function(d) {
+        var h = $scope.addZero(d.getHours());
+        var m = $scope.addZero(d.getMinutes());
+        var s = $scope.addZero(d.getSeconds());
+        var time = h + ":" + m + ":" + s;
+        return time ;
+    };
 
     new Event(
       {
         title: business.name,
-        start: "2015-02-14",
-        start_time: "2015-02-25T05:05:06+07:00",
-        end_time: "2015-02-24T06:05:06+07:00",
+        start: $scope.convertTime(start_time),
+        end: $scope.convertTime(end_time),
         description: business.snippet_text,
         main_url: business.url,
         rating: business.rating,
         itinerary_id: $scope.makeid(), //create random id for the event id
         location: business.location.display_address[0],
-        category: business.categories[0][0]
+        category: business.categories[0][0],
+        allDay: fullday
       }
     ).$save(function(data){
       console.log(data);
