@@ -1,6 +1,6 @@
 class Itinerary < ActiveRecord::Base
-	validates_presence_of :name, :description, :start_date, :end_date
-	validates :name, uniqueness: true
+	# validates_presence_of :name, :description, :start_date, :end_date
+	# validates :name, uniqueness: true
 	# validates_date :start_date, :on_or_after => lambda { Date.current}
 	# validates_date :end_date, :on_or_after => :start_date
 
