@@ -108,6 +108,19 @@ h2 {
 	color: $grey;
 }
 
+.search-bk {
+	z-index: -1;
+	position: absolute;
+	margin-top: 225px;
+	text-align: center;
+	margin-left: 40px;
+	font-size: 115px;
+	font-weight: 900;
+	letter-spacing: -2px;
+	line-height: 95px;
+	color: $grey2;
+}
+
 // global styles
 
 * {
@@ -305,7 +318,7 @@ h2 {
 	background-color: $grey2;
 	border: solid 1px $grey;
 	padding: 40px;
-	margin-top: 545px;;
+	margin-top: 565px;
 }
 
 .event-form {
@@ -315,8 +328,7 @@ h2 {
 }
 
 .event-info {
-	margin-top: 30px;
-	margin-left: 30px;
+	margin: 30px;
 }
 
 .edit-itin-form {
@@ -418,6 +430,7 @@ border-color: 1px solid white;
 	// margin-bottom: 100px;
 	padding-left: 10px;
 	padding-top: 40px;
+	background-color: $grey;
 }
 
 div.resultdisplay::-webkit-scrollbar { 

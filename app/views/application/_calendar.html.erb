@@ -2,25 +2,27 @@
 
 	<div ng-repeat="x in results">
 		<div class="itin b3b">
-			<div class="text-left">{{x.name}}</div>
-			<div class="text-right"> {{x.start_date | date:"MM/dd/yyyy" }}</em> to <em>{{x.end_date | date:"MM/dd/yyyy"}}</div>
+			<div class="text-left">{{x.start_date | date:"MM/dd/yyyy" }}</div>
+			<div class="text-center">{{x.name}}</div>
+			<div class="text-right">{{x.end_date | date:"MM/dd/yyyy"}}</div>
 		</div>
 	</div>
 		
 	<div class="calendar cal" ng-model="eventSources" calendar="myCalendar" config="uiConfig.calendar" ui-calendar="uiConfig.calendar"></div>
 	
-<!-- 	<div class="event-form" ng-show="showevent">
+	<div class="event-form" ng-show="showevent">
 				<div class="event-info">
 					<div class="b5">{{show.start._d | date: "medium" }} {{show.end._d | date: "MM/dd/yyyy" }}</div>
+					<duv><a href="{{show.main_url}}">Website</a></duv>
 					<div>{{show.title}} @ <em>{{show.location}}</em></div>
 					<div>{{show.category}}</div><br>
 					{{show.description}}<br>
-					<duv><a href="{{show.main_url}}">Website</a></duv><br>
+					<br>
 					<button class="btn btn-primary" ng-click="showeventform =!showeventform"> + EVENT </button>
 				</div>
 			<br>
 			<div ng-show="showeventform">
 				<%= render partial: "events/eventform" %>
 			</div>
-	</div> -->
+	</div>
 </div>	

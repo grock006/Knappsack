@@ -2,13 +2,13 @@
 <ul >
    <li ng-repeat="business in businesses">
     <div class="list_outerbox">
-     <!--  <div class="list_index">
+      <div class="list_index">
        {{ $index + 1 }}.
-      </div>   -->
+      </div>  
       <div class="list_content">
         <div class="inner_col">
           <div class="business_name">
-              <span>{{business.name }}</span>
+              <span>{{business.name }}</span> 
           </div>
           <div class="business_meta">
             <div class="rate"> {{business.rating }} </div>
@@ -24,9 +24,8 @@
         </div>
       </div>     
     </div>
-    
-    <!--Add Event Button Section-->
-      <button class="btn btn-default btn-primary" ng-click="isCollapsed = !isCollapsed">+</button>
+
+      <button class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Add Event</button>
       <div collapse="isCollapsed" style="width: 380px; height:230px;">
           <%= render partial: "add_event"%>
        </div> 
