@@ -1,30 +1,31 @@
-<form class="new_event ng-pristine ng-valid" id="new_event" action="/events" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="U0+9Do2R6tVxAQLAiFEp8vHJMaRb9t4Dqc9kcXvqqLEJmUtW05JR8pJ4ETQwBN5cxuiUKV6cd3qGWjRKuZbVCg==">
+<form class="new_event" id="new_event" action="/events" accept-charset="UTF-8" method="post">
+
+          <input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="U0+9Do2R6tVxAQLAiFEp8vHJMaRb9t4Dqc9kcXvqqLEJmUtW05JR8pJ4ETQwBN5cxuiUKV6cd3qGWjRKuZbVCg==">
          
             <div class="form-group">
-              <input class="form-control" type="text" name="event[name]" id="event_name" placeholder="Name">
+                <input class="form-control" type="text" name="event[title]" id="event_title" placeholder="Name">
             </div>
 
                <div class="form-group form-inline">
-              Date <input class="form-control" type="date" name="event[date]" id="event_date" placeholder="Date">
-              Start Time <input class="form-control" type="time" name="event[start_time]" id="event_start_time" placeholder="Start Time">
-              End Time <input class="form-control" type="time" name="event[end_time]" id="event_end_time" placeholder="End Time">
+                  Date <input class="form-control" type="date" name="event[start]" id="event_start" placeholder="Date">
+                  Start<input class="form-control" type="time" name="event[begin_time]" id="event_begin_time" placeholder="Start">
+                  End <input class="form-control" type="time" name="event[stop_time]" id="event_stop_time" placeholder="End">
               </div>
             
             <div class="form-group">
-              <input class="form-control" type="text" name="event[category]" id="event_category" placeholder="Category">
+                  <input class="form-control" type="text" name="event[category]" id="event_category" placeholder="Category">
             </div>
 
             <div class="form-group">
-              <textarea class="form-control" name="event[description]" id="event_description" placeholder="Description"></textarea>
+                <textarea class="form-control" name="event[description]" id="event_description" placeholder="Description"></textarea>
             </div>
 
-        
-
-          <div class="form-group">
+      
+            <div class="form-group">
               <input class="form-control" type="text" name="event[location]" id="event_location" placeholder="Location">
             </div>
   
-              <input class="form-control" type="hidden" name="event[itinerary_id]" id="event_itinerary_id">
+              <input class="form-control" type="text" name="event[itinerary_id]" id="event_itinerary_id">
 
             <div class="form-group form-inline">
               <input class="form-control" type="text" name="event[rating]" id="event_rating" placeholder="Rating">

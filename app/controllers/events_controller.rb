@@ -16,7 +16,7 @@ class EventsController < ApplicationController
     	@event = Event.new(event_params)
 
     if @event.save
-      redirect_to root_path
+      redirect_to main_path
     else
       render :new
     end
@@ -30,7 +30,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 
     if @event.update(event_params)
-      redirect_to events_path
+      redirect_to main_path
     else
       render :edit
     end
@@ -41,13 +41,13 @@ class EventsController < ApplicationController
     
     @event.destroy
     
-    redirect_to events_path
+    redirect_to main_path
   end
 
 private
 
   def event_params
-    params.require(:event).permit(:name, :date, :start_time, :end_time, :category, :description, :rating, :main_url, :location, :itinerary_id)
+    params.require(:event).permit(:title, :start, :begin_time, :stop_time, :category, :description, :rating, :main_url, :location, :itinerary_id)
   end
     
 
