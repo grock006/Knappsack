@@ -1,4 +1,4 @@
-<div ng-controller="itineraryController">
+<div ng-controller="itineraryController" style="height: 100%;">
 
 	<div ng-repeat="x in results">
 		<div class="itin b3b">
@@ -7,8 +7,8 @@
 			<div class="text-right">{{x.end_date | date:"MM/dd/yyyy"}}</div>
 		</div>
 	</div>
-		
-	<div class="calendar cal" ng-model="eventSources" calendar="myCalendar" config="uiConfig.calendar" ui-calendar="uiConfig.calendar"></div>
+
+	<div class="calendar cal" ng-model="eventSources" calendar="myCalendar" config="uiConfig.calendar" ui-calendar="uiConfig.calendar" style="height: 100%;"></div>
 	
 	<div class="event-form" ng-show="showevent">
 				<div class="event-info">
