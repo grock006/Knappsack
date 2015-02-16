@@ -19,7 +19,7 @@ app.controller("itineraryController",function($scope, $http, $resource){
       //Configuration for the Angular UI Calendar     
         $scope.uiConfig = {
           calendar:{
-            height: 350,
+            height: 1000,
             editable: false,
             timezone: false,
             header:{

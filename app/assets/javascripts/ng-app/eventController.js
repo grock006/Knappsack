@@ -93,9 +93,12 @@ $scope.makeid = function()
         var y = $scope.addZero(d.getFullYear());
         var m = $scope.addZero(d.getMonth());
         var d = $scope.addZero(d.getDate());
-        var date = y + "-" + m + "-" + d;
+        var date = y + "-" + m + "-" + d + "T05:05:06+07:00";
         return date ;
     };
+
+var test = $scope.convertDate(start_date)
+console.log(test);
 
     $scope.convertTime = function(d) {
         var h = $scope.addZero(d.getHours());
@@ -105,11 +108,13 @@ $scope.makeid = function()
         return time ;
     };
 
+
+
     new Event(
       {
         title: business.name,
-        start: $scope.convertDate(start_date),
-        end: $scope.convertDate(end_date),
+        start: "2015-02-17T05:05:06+07:00",
+        end: "2015-02-17T05:05:06+07:00",
         begin_time: $scope.convertTime(start_time),
         stop_time: $scope.convertTime(end_time),
         description: business.snippet_text,
