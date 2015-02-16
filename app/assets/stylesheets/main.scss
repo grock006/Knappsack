@@ -429,7 +429,7 @@ border-color: 1px solid white;
 	margin-top: 65px;
 	// margin-bottom: 100px;
 	padding-left: 10px;
-	padding-top: 40px;
+	padding-top: 20px;
 	background-color: $grey;
 }
 
@@ -448,12 +448,14 @@ div.resultdisplay::-moz-scrollbars-vertical {
 }
 
 
-.resultdisplay ul li .list_outerbox{
-    width: 395px; 
-    height: 120px; 
+.list_outerbox{
+	width: 385px;
+	height: 120px;
+	border-bottom: #e6e6e6 solid;
+	margin-top: 30px;
 }
 
-.resultdisplay ul li .list_outerbox .list_index{
+.list_index{
   float: left;
   color: $grey;
   width: 37px;
@@ -462,37 +464,48 @@ div.resultdisplay::-moz-scrollbars-vertical {
   text-align: center;
 }
 
-.resultdisplay ul li .list_outerbox .list_content {
+.list_content {
   width: 100%;
   margin: 0;
 }
 
-.resultdisplay ul li .list_outerbox .list_content .inner_col {
+.inner_col {
   float: left;
   width: 65%;
   margin: 0;
-
 }
 
-.resultdisplay ul li .list_outerbox .list_content .inner_col  .business_name{
+.business_meta {
+	margin-left: -40px;
+	margin-top: 40px;
+}
+
+.business_name{
   font-size: 20px;
   color: $navy;
+  margin-bottom: -38px;
+	margin-left: 35px;
 
 }
 
-.resultdisplay ul li .list_outerbox .list_content .inner_col  .business_name a {
+.business_name a {
   font-size: 20px;
   color: #31B0D5;
+  margin-bottom: -38px;
+	margin-left: 35px;
 
 }
-.resultdisplay ul li .list_outerbox .list_content .inner_col  .business_name a:hover{
+
+.business_name a:hover{
   font-size: 20px;
   color: #31B0D5;
   cursor:pointer;
+  margin-bottom: -38px;
+	margin-left: 35px;
 
 }
 
-.resultdisplay ul li .list_outerbox .list_content .inner_col  .business_meta .rate{
+.rate{
   color: white;
   background: $red;
   border-radius: 50%;
@@ -504,19 +517,18 @@ div.resultdisplay::-moz-scrollbars-vertical {
 	line-height: 28px;
   float: left;
   margin:  10px 0px 20px;
-  
+  margin-right: -30px;
 }
 
-.resultdisplay ul li .list_outerbox .list_content .inner_col  .category{
+.category{
   color: #AEB4B6;
   font-size: 15px;
   text-align: left;
   line-height: 30px;
-  padding-left: 40px;
-  
+  padding-left: 40px;  
 }
 
-.resultdisplay ul li .list_outerbox  .list_content .inner_col  .business_meta .address{
+.address{
   padding-left: 40px;
   font-size: 15px;
   line-height: 30px;
@@ -524,26 +536,26 @@ div.resultdisplay::-moz-scrollbars-vertical {
   padding-left: 40px;
 }
 
-.resultdisplay ul li .list_outerbox .list_content .inner_col  .result_footer{
-  border-top: 1px solid #eaeaea;
+.result_footer{
+  // border-top: 1px solid #eaeaea;
   clear: both;
   overflow: hidden;
 }
 
 
-.resultdisplay ul li .list_outerbox .list_content .business_photo {
+.business_photo {
   float: right;
   margin: 0;
   border-radius: 6px;
 }
 
-.resultdisplay ul li .list_outerbox .list_content .business_photo img:hover {
+.business_photo img:hover {
   float: right;
   margin: 0;
   cursor:pointer;
 }
 
-.resultdisplay ul li .list_outerbox .list_content .business_photo img{
+.business_photo img{
   float: right;
   margin: 0;
   height: 85px;
@@ -552,8 +564,16 @@ div.resultdisplay::-moz-scrollbars-vertical {
 
 }
 
-.resultdisplay ul li .list_outerbox .list_content .business_photo img:hover {
+.business_photo img:hover {
   cursor:pointer;
+}
+
+.add-event-form {
+	background-color: $grey;
+	width: 380px;
+	height:230px;
+	margin-top: 20px;
+	border-bottom: #e6e6e6 solid;
 }
 
 .autofill {

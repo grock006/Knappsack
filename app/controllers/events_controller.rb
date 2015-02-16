@@ -1,19 +1,19 @@
 class EventsController < ApplicationController
 	
 	def index
-		@event = Event.all
+		@event = current_user.event.all
 	end
 
 	def show
-    	@event = Event.find(params[:id])
+    	@event = current_user.event.find(params[:id])
   	end
 
   	def new
-    	@event = Event.new
+    	@event = current_user.events.new
   	end
 
   	def create
-    	@event = Event.new(event_params)
+    	@event = current_user.events.new(event_params)
 
     if @event.save
       redirect_to main_path
@@ -23,11 +23,11 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
+    @event = current_user.events.find(params[:id])
   end
 
   def update
-    @event = Event.find(params[:id])
+    @event = current_user.events.find(params[:id])
 
     if @event.update(event_params)
       redirect_to main_path
@@ -37,7 +37,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:id])
+    @event = current_user.events.find(params[:id])
     
     @event.destroy
     

@@ -1,19 +1,21 @@
 class ItinerariesController < ApplicationController
 	
 	def index
-		@itinerary = Itinerary.all
+    if current_user
+		  @itinerary = current_user.itinerary.last
+    end
 	end
 
 	def show
-    	@itinerary = Itinerary.find(params[:id])
+    	@itinerary = current_user.itinerary.find(params[:id])
   end
 
   def new
-    	@itinerary = Itinerary.new
+    	@itinerary = current_user.itineraries.new
   end
 
   def create
-    	@itinerary = Itinerary.new(itinerary_params)
+    	@itinerary = current_user.itineraries.new(itinerary_params)
 
     if @itinerary.save
       redirect_to "/index"
@@ -23,11 +25,11 @@ class ItinerariesController < ApplicationController
   end
 
   def edit
-    @itinerary = Itinerary.find(params[:id])
+    @itinerary = current_user.itinerary.find(params[:id])
   end
 
   def update
-    @itinerary = Itinerary.find(params[:id])
+    @itinerary = current_user.itinerary.find(params[:id])
 
     if @itinerary.update(itinerary_params)
       redirect_to "/index"
@@ -37,7 +39,7 @@ class ItinerariesController < ApplicationController
   end
 
   def destroy
-    @itinerary = Itinerary.find(params[:id])
+    @itinerary = current_user.itinerary.find(params[:id])
     
     @itinerary.destroy
     

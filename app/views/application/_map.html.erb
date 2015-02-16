@@ -2,12 +2,13 @@
 <ui-gmap-google-map center='map.center' zoom='map.zoom'>
   <ui-gmap-marker ng-repeat="marker in markers" coords="marker.coords"  idkey="marker.id">
       <ui-gmap-window options="windowOptions" closeClick="closeClick()" style="border:4px solid blue;;">
-                <div style="width: 400px; height: 300px;">
+                <div style="width: 400px; height: 155px;">
                     <div style="with:400px; height: 150px">
                       <div style="float: left">
                           <span style="font-size: 20px; font-weight: bold">{{marker.venue_name}}</span>
                            </div><br><br>
-                          <img src="{{marker.rating_img_url_large}}" alt="Venue Rating">
+                          <img src="{{marker.rating_img_url_large}}" alt="Venue Rating" style="width: 89px;
+margin-bottom: 8px;">
                           <br>
                           <span>Category: {{marker.category}}</span><br>
                           <span>{{marker.address1}}</span><br>
@@ -15,12 +16,10 @@
                           <span>{{marker.address3}}</span><br>
                           <span>{{marker.display_phone}}</span><br>
                           <div ng-controller="eventMapController">
-                            <button type="button" ng-click="createEvent({{marker}})">Add</button>
-
                           </div>
                       </div>
                       <div >
-                         <img class="img-rounded" src="{{marker.image_url}}" alt="{{marker.name}}" style="float: right; height:80px; width: 80px; border-radius: 6px;">
+                         <img class="img-rounded" src="{{marker.image_url}}" alt="{{marker.name}}" style="float: right; height:80px; width: 80px; border-radius: 6px; margin-top: -110px;">
                       </div>
                     </div style="width: 400px; height: 150px;">
                        <img src="{{marker.snippet_image_url}}" style="height: 50px; width: 50px; padding: 10px;">

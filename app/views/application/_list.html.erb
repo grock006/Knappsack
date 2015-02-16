@@ -7,29 +7,27 @@
       </div>   -->
       <div class="list_content">
         <div class="inner_col">
-          <div class="business_name">
-              <span>{{business.name }}</span>
-          </div>
+          <div class="business_name"><span>{{business.name }}</span></div>
+          <div class="rate"> {{business.rating }} </div>
           <div class="business_meta">
-            <div class="rate"> {{business.rating }} </div>
-              <div class="business_data">
-                <div class="address">{{ business.location.address[0] }}</div>
-                <div class="category">{{ business.categories[0][0] }}</div>
-            </div>                     
+            <div class="business_data">
+              <div class="address">{{ business.location.address[0] }}</div>
+              <div class="category">{{ business.categories[0][0] }}</div>
+            </div> 
           </div> 
           <div class="result_footer"></div>
         </div>
         <div class="business_photo">
           <img class="img-rounded" src="{{business.image_url}}" alt="{{business.name}}" >
-        </div>
+        </div>    
+      <!--Add Event Button Section-->
+      <div>
+      <button class="btn btn-default btn-primary" ng-click="isCollapsed = !isCollapsed">+</button></div>
       </div>     
     </div>
-    
-    <!--Add Event Button Section-->
-      <button class="btn btn-default btn-primary" ng-click="isCollapsed = !isCollapsed">+</button>
-      <div collapse="isCollapsed" style="width: 380px; height:230px;">
-          <%= render partial: "add_event"%>
-       </div> 
+    <div collapse="isCollapsed" class="add-event-form">
+      <%= render partial: "add_event"%>
+    </div> 
    </li>
   </ul>
 </div>
