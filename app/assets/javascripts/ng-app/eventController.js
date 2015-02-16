@@ -89,6 +89,14 @@ $scope.makeid = function()
         return i;
     };
 
+    $scope.convertDate = function(d) {
+        var y = $scope.addZero(d.getFullYear());
+        var m = $scope.addZero(d.getMonth());
+        var d = $scope.addZero(d.getDate());
+        var date = y + "-" + m + "-" + d;
+        return date ;
+    };
+
     $scope.convertTime = function(d) {
         var h = $scope.addZero(d.getHours());
         var m = $scope.addZero(d.getMinutes());
@@ -100,8 +108,10 @@ $scope.makeid = function()
     new Event(
       {
         title: business.name,
-        start: $scope.convertTime(start_time),
-        end: $scope.convertTime(end_time),
+        start: $scope.convertDate(start_date),
+        end: $scope.convertDate(end_date),
+        begin_time: $scope.convertTime(start_time),
+        stop_time: $scope.convertTime(end_time),
         description: business.snippet_text,
         main_url: business.url,
         rating: business.rating,
